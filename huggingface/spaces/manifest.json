@@ -174,7 +174,7 @@
       "default_repo_name": "governance-library",
       "title": "AegisLayer Governance Library",
       "emoji": "📚",
-      "colorFrom": "orange",
+      "colorFrom": "yellow",
       "colorTo": "green",
       "short_description": "Index of ADRs, RFCs, glossary, patterns, and governance.",
       "pinned": false,

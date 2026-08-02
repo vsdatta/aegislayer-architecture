@@ -28,6 +28,7 @@ APPROVED_TAGS = {
     "explainability",
     "auditability",
 }
+APPROVED_COLORS = {"red", "yellow", "green", "blue", "indigo", "purple", "pink", "gray"}
 REQUIRED_METADATA = [
     "title",
     "emoji",
@@ -101,6 +102,10 @@ def validate_metadata(space_dir: Path, slug: str) -> list[str]:
         errors.append(f"Space {slug} must use app_file: index.html")
     if metadata.get("license") != "apache-2.0":
         errors.append(f"Space {slug} must use license: apache-2.0")
+    for color_key in ["colorFrom", "colorTo"]:
+        color_value = metadata.get(color_key)
+        if isinstance(color_value, str) and color_value not in APPROVED_COLORS:
+            errors.append(f"Space {slug} {color_key} must be one of {sorted(APPROVED_COLORS)}")
     short_description = metadata.get("short_description")
     if isinstance(short_description, str) and len(short_description) > 60:
         errors.append(f"Space {slug} short_description must be 60 characters or fewer")

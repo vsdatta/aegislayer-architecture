@@ -1,7 +1,7 @@
 ---
 title: AegisLayer Governance Library
 emoji: 📚
-colorFrom: orange
+colorFrom: yellow
 colorTo: green
 sdk: static
 app_file: index.html
