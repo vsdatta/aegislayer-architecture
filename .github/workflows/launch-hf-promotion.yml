@@ -1,0 +1,69 @@
+name: Launch Hugging Face Promotion
+
+"on":
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  launch:
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_ORG: AEGISLAYER
+      HF_SPACE_REPO: AEGISLAYER/README
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install launch dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade huggingface_hub mkdocs mkdocs-material pymdown-extensions
+
+      - name: Validate required configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${HF_TOKEN:-}" ]; then
+            echo "HF_TOKEN secret is required."
+            exit 1
+          fi
+
+      - name: Build and validate launch artifacts
+        run: |
+          python scripts/build_hf_portfolio.py
+          python scripts/build_hf_datasets.py
+          python scripts/validate_hf_assets.py
+          python scripts/validate_hf_datasets.py
+
+      - name: Launch portfolio, datasets, and collection
+        run: python scripts/launch_hf_promotion.py
+
+      - name: Commit documentation updates
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "No documentation updates produced by launch."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add huggingface/PUBLICATION_STATUS.md huggingface/PROFILE_LINKS.md huggingface/RELEASE_FEED.md huggingface/OWNER_LAUNCH_GUIDE.md huggingface/collections/COLLECTION_PUBLISHING_GUIDE.md
+          git commit -m "Record published Hugging Face launch URLs"
+          git push origin HEAD:main
+
+      - name: Upload launch summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: huggingface-launch-summary
+          path: dist/huggingface/launch-summary.json
