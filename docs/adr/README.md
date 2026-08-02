@@ -15,7 +15,7 @@ ADRs explain why important architectural choices were made, which alternatives w
 ## Current ADR Catalog
 
 | ADR | Title | Status |
-|---|---|---|
+| --- | --- | --- |
 | [ADR-0000](0000-template.md) | ADR Template | Template |
 | [ADR-0001](0001-separate-ai-reasoning-from-execution-authority.md) | Separate AI Reasoning from Execution Authority | Accepted |
 | [ADR-0002](0002-identity-first-authorization.md) | Identity-First Authorization | Accepted |

@@ -3,6 +3,7 @@
 This document provides conceptual examples showing how the public AegisLayer governance patterns work together. These examples are illustrative only and intentionally omit implementation details.
 
 ## Example 1: Governed AI Request
+
 1. User submits a request.
 2. Identity and authority are validated.
 3. Policy and risk are evaluated.
@@ -18,6 +19,7 @@ Expected governance outcome:
 - Evidence is sufficient for independent review.
 
 ## Example 2: Connector Health Failure
+
 1. Connector selected.
 2. Health verification fails.
 3. Execution does not proceed.
@@ -30,6 +32,7 @@ Expected governance outcome:
 - No implicit fallback broadens privileges.
 
 ## Example 3: High-Impact Operation
+
 1. Action exceeds governance threshold.
 2. Human approval is required.
 3. Approval is bound to scope and expiry.
@@ -42,6 +45,7 @@ Expected governance outcome:
 - Expired or mismatched approval blocks execution.
 
 ## Example 4: Continuous Verification
+
 1. Long-running workflow begins.
 2. Monitoring detects approval expiry.
 3. Capability is revoked.
@@ -56,7 +60,7 @@ Expected governance outcome:
 ## Example-to-Pattern Mapping
 
 | Example | Primary Pattern | Related ADRs |
-|---|---|---|
+| --- | --- | --- |
 | Governed AI Request | Governed Request Flow | ADR-0001, ADR-0002, ADR-0003, ADR-0004 |
 | Connector Health Failure | Connector Invocation | ADR-0004, ADR-0005 |
 | High-Impact Operation | High-Impact Action | ADR-0007 |

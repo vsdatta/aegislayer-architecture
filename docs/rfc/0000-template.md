@@ -26,13 +26,13 @@ Describe:
 
 List the intended outcomes.
 
-- 
+-
 
 ## Non-Goals
 
 List matters intentionally outside the scope of this proposal.
 
-- 
+-
 
 ## Background and Context
 
@@ -66,31 +66,31 @@ Evaluate the proposal against the public architecture principles.
 
 ### Identity and Authority
 
-- 
+-
 
 ### Least Privilege
 
-- 
+-
 
 ### Fail-Closed Behavior
 
-- 
+-
 
 ### Human Approval
 
-- 
+-
 
 ### Evidence and Auditability
 
-- 
+-
 
 ### Monitoring and Incident Response
 
-- 
+-
 
 ### Privacy and Data Handling
 
-- 
+-
 
 ## Threat Analysis
 
@@ -158,11 +158,11 @@ Confirm that the RFC does not intentionally disclose:
 
 ## Open Questions
 
-- 
+-
 
 ## References
 
-- 
+-
 
 ## Decision Outcome
 

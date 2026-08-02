@@ -12,7 +12,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
 <div class="grid cards" markdown>
 
--   :material-eye-outline:{ .lg .middle } **Vision**
+- :material-eye-outline:{ .lg .middle } **Vision**
 
     ---
 
@@ -20,7 +20,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Read the vision](VISION.md)
 
--   :material-sitemap-outline:{ .lg .middle } **Architecture**
+- :material-sitemap-outline:{ .lg .middle } **Architecture**
 
     ---
 
@@ -28,7 +28,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Explore the architecture](ARCHITECTURE.md)
 
--   :material-map-marker-path:{ .lg .middle } **Reference Guide**
+- :material-map-marker-path:{ .lg .middle } **Reference Guide**
 
     ---
 
@@ -36,7 +36,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Open the reference guide](REFERENCE_ARCHITECTURE_GUIDE.md)
 
--   :material-shield-alert-outline:{ .lg .middle } **Threat Model**
+- :material-shield-alert-outline:{ .lg .middle } **Threat Model**
 
     ---
 
@@ -44,7 +44,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Review the threat model](THREAT_MODEL.md)
 
--   :material-scale-balance:{ .lg .middle } **Governance**
+- :material-scale-balance:{ .lg .middle } **Governance**
 
     ---
 
@@ -52,7 +52,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Read the governance model](GOVERNANCE.md)
 
--   :material-help-circle-outline:{ .lg .middle } **FAQ**
+- :material-help-circle-outline:{ .lg .middle } **FAQ**
 
     ---
 
@@ -60,7 +60,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Open the FAQ](FAQ.md)
 
--   :material-compass-outline:{ .lg .middle } **Getting Started**
+- :material-compass-outline:{ .lg .middle } **Getting Started**
 
     ---
 
@@ -68,7 +68,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Start here](GETTING_STARTED.md)
 
--   :material-shield-check-outline:{ .lg .middle } **Control Mapping**
+- :material-shield-check-outline:{ .lg .middle } **Control Mapping**
 
     ---
 
@@ -76,7 +76,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: View control mapping](CONTROL_MAPPING.md)
 
--   :material-shape-outline:{ .lg .middle } **Pattern Library**
+- :material-shape-outline:{ .lg .middle } **Pattern Library**
 
     ---
 
@@ -84,7 +84,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Browse patterns](PATTERN_LIBRARY.md)
 
--   :material-file-document-multiple-outline:{ .lg .middle } **Reference Examples**
+- :material-file-document-multiple-outline:{ .lg .middle } **Reference Examples**
 
     ---
 
@@ -92,7 +92,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Read examples](REFERENCE_EXAMPLES.md)
 
--   :material-source-branch:{ .lg .middle } **Architecture Decisions**
+- :material-source-branch:{ .lg .middle } **Architecture Decisions**
 
     ---
 
@@ -100,7 +100,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Open ADR index](adr/README.md)
 
--   :material-file-tree-outline:{ .lg .middle } **Requests for Comments**
+- :material-file-tree-outline:{ .lg .middle } **Requests for Comments**
 
     ---
 
@@ -108,7 +108,7 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Open RFC index](rfc/README.md)
 
--   :material-book-alphabet:{ .lg .middle } **Glossary**
+- :material-book-alphabet:{ .lg .middle } **Glossary**
 
     ---
 

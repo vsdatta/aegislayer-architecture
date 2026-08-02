@@ -9,10 +9,10 @@ The format is inspired by Keep a Changelog and uses Semantic Versioning principl
 ### Added
 
 - Root `assets/` placeholder branding set:
-	- `assets/logo.svg`
-	- `assets/favicon.svg`
-	- `assets/repository-banner.svg`
-	- `assets/social-preview.svg`
+  - `assets/logo.svg`
+  - `assets/favicon.svg`
+  - `assets/repository-banner.svg`
+  - `assets/social-preview.svg`
 
 ### Changed
 
@@ -46,6 +46,7 @@ Scope includes:
 ### Added
 
 #### Repository Foundation
+
 - README
 - Apache 2.0 license
 - Security policy
@@ -54,6 +55,7 @@ Scope includes:
 - Public roadmap
 
 #### Core Documentation
+
 - Vision
 - High-level Architecture
 - Public Threat Model
