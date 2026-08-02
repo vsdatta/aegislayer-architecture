@@ -1,0 +1,67 @@
+site_name: AegisLayer Architecture
+site_description: Public reference architecture, research, and documentation for secure, governed, and auditable AI systems.
+site_url: https://vsdatta.github.io/aegislayer-architecture/
+repo_url: https://github.com/vsdatta/aegislayer-architecture
+repo_name: vsdatta/aegislayer-architecture
+copyright: Copyright © VND TECH LLC
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Vision: VISION.md
+  - Architecture: ARCHITECTURE.md
+  - Threat Model: THREAT_MODEL.md
+  - Governance: GOVERNANCE.md
+  - FAQ: FAQ.md
+  - Glossary: GLOSSARY.md
+  - Project:
+      - Roadmap: ../ROADMAP.md
+      - Changelog: ../CHANGELOG.md
+      - Security: ../SECURITY.md
+      - Contributing: ../CONTRIBUTING.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/vsdatta/aegislayer-architecture
+    - icon: fontawesome/solid/globe
+      link: https://aegislayer.ai
