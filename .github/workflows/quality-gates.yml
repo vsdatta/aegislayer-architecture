@@ -73,6 +73,8 @@ jobs:
           import path from 'node:path';
           import { parse } from '@mermaid-js/parser';
 
+          const declarationPattern = /^(flowchart|graph|sequenceDiagram|stateDiagram|stateDiagram-v2|classDiagram|erDiagram|journey|gantt|pie|mindmap|timeline|quadrantChart|requirementDiagram|gitGraph|C4Context|C4Container|C4Component|C4Dynamic|C4Deployment)\b/m;
+          const normalizeDiagramType = (diagramType) => diagramType === 'graph' ? 'flowchart' : diagramType;
           const dir = path.join(process.cwd(), 'diagrams');
           const files = fs.readdirSync(dir).filter((f) => f.endsWith('.mmd'));
           let failed = false;
@@ -81,13 +83,15 @@ jobs:
 
           for (const file of files) {
             const content = fs.readFileSync(path.join(dir, file), 'utf8');
+            const match = content.match(declarationPattern);
+            const diagramType = normalizeDiagramType(match?.[1] ?? '');
             try {
-              parse(content);
+              await parse(diagramType, content);
               parsed += 1;
             } catch (err) {
               const message = String(err);
               if (message.includes('Unknown diagram type')) {
-                console.warn(`Skipping unsupported Mermaid type for parser: ${file}`);
+                console.warn(`Skipping unsupported Mermaid type for parser: ${file} (${diagramType || 'unknown'})`);
                 skipped += 1;
                 continue;
               }
@@ -137,8 +141,16 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+      - name: Install actionlint
+        env:
+          ACTIONLINT_VERSION: 1.7.12
+        run: |
+          mkdir -p "$RUNNER_TEMP/actionlint"
+          curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz" \
+            | tar -xz -C "$RUNNER_TEMP/actionlint" actionlint
+          echo "$RUNNER_TEMP/actionlint" >> "$GITHUB_PATH"
       - name: Workflow syntax review
-        uses: rhysd/actionlint@v1
+        run: actionlint
       - name: Build release artifacts
         run: |
           mkdir -p dist
