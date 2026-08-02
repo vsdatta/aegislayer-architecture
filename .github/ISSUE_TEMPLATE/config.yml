@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability report
+    url: mailto:security@aegislayer.ai
+    about: Report suspected vulnerabilities privately. Do not disclose security issues in public GitHub issues.
+  - name: Governance or conduct concern
+    url: mailto:governance@aegislayer.ai
+    about: Report governance, conduct, or community concerns privately.
+  - name: AegisLayer website
+    url: https://aegislayer.ai
+    about: Visit the official AegisLayer website.
