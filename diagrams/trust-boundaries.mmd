@@ -1,0 +1,76 @@
+flowchart LR
+    subgraph U[External and Human Domain]
+        U1[Human Users]
+        U2[External Systems]
+        U3[Untrusted Content Sources]
+    end
+
+    subgraph A[AI Reasoning Domain]
+        A1[AI Model or Agent]
+        A2[Prompt and Context Layer]
+        A3[Retrieval and Memory]
+    end
+
+    subgraph G[Governance Domain]
+        G1[Identity and Authority]
+        G2[Policy and Risk Evaluation]
+        G3[Approval Service]
+    end
+
+    subgraph R[Controlled Runtime Domain]
+        R1[Capability Broker]
+        R2[Execution Runtime]
+        R3[Tool and Connector Gateway]
+    end
+
+    subgraph E[Evidence and Operations Domain]
+        E1[Evidence Store]
+        E2[Audit and Telemetry]
+        E3[Monitoring and Incident Response]
+    end
+
+    subgraph X[External Resource Domain]
+        X1[APIs and SaaS]
+        X2[Cloud and Infrastructure]
+        X3[Databases and Sensitive Data]
+    end
+
+    U1 -->|request| A2
+    U2 -->|event or request| A2
+    U3 -->|untrusted input| A2
+    A2 --> A1
+    A3 -->|retrieved context| A1
+    A1 -->|proposed action| G1
+    G1 --> G2
+    G2 -->|approval required| G3
+    G2 -->|allowed with constraints| R1
+    G3 -->|approved scope| R1
+    R1 --> R2
+    R2 --> R3
+    R3 --> X1
+    R3 --> X2
+    R3 --> X3
+
+    G1 -. identity evidence .-> E1
+    G2 -. policy evidence .-> E1
+    G3 -. approval evidence .-> E1
+    R2 -. execution events .-> E2
+    R3 -. connector telemetry .-> E2
+    E1 --> E3
+    E2 --> E3
+    E3 -. contain or revoke .-> R1
+    E3 -. policy feedback .-> G2
+
+    classDef untrusted fill:#fff2f2,stroke:#a33,stroke-width:1px;
+    classDef ai fill:#f5f0ff,stroke:#6b3fa0,stroke-width:1px;
+    classDef governance fill:#eef4ff,stroke:#1f4b99,stroke-width:1px;
+    classDef runtime fill:#fff7e6,stroke:#8a5a00,stroke-width:1px;
+    classDef evidence fill:#f0fff4,stroke:#2e7d32,stroke-width:1px;
+    classDef external fill:#f5f5f5,stroke:#555,stroke-width:1px;
+
+    class U1,U2,U3 untrusted;
+    class A1,A2,A3 ai;
+    class G1,G2,G3 governance;
+    class R1,R2,R3 runtime;
+    class E1,E2,E3 evidence;
+    class X1,X2,X3 external;
