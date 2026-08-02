@@ -28,7 +28,7 @@ This guide is optimized for:
 ## Documentation Map
 
 | Topic | Primary Reference |
-|---|---|
+| --- | --- |
 | Getting Started | [GETTING_STARTED.md](GETTING_STARTED.md) |
 | Vision | [VISION.md](VISION.md) |
 | Architecture | [ARCHITECTURE.md](ARCHITECTURE.md) |

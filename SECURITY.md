@@ -10,7 +10,7 @@ Do not disclose suspected vulnerabilities in public issues, discussions, pull re
 
 Report security concerns privately to:
 
-**security@aegislayer.ai**
+**<security@aegislayer.ai>**
 
 Include, where possible:
 

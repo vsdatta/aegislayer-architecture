@@ -220,7 +220,7 @@ A formal security contact and vulnerability-disclosure policy will be published 
 
 ## Website
 
-**AegisLayer:** https://aegislayer.ai
+**AegisLayer:** <https://aegislayer.ai>
 
 ## Organization
 

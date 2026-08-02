@@ -46,11 +46,11 @@ Reports should include enough context for a fair review. Deliberately false or r
 
 For general conduct concerns, contact:
 
-**governance@aegislayer.ai**
+**<governance@aegislayer.ai>**
 
 For security concerns, use:
 
-**security@aegislayer.ai**
+**<security@aegislayer.ai>**
 
 ## Scope
 

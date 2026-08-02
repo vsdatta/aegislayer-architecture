@@ -30,12 +30,14 @@ This approach:
 ## Consequences
 
 ### Benefits
+
 - Stronger attribution.
 - Clear authorization boundaries.
 - Better incident investigation.
 - Reduced privilege escalation opportunities.
 
 ### Trade-offs
+
 - Additional validation steps.
 - Dependence on identity infrastructure.
 - Increased architectural complexity.

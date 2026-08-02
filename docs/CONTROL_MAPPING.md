@@ -3,7 +3,7 @@
 This document cross-references the core governance principles of the AegisLayer reference architecture with documentation, Architecture Decision Records (ADRs), diagrams, and the RFC process.
 
 | Control Principle | ADRs | Diagrams | Core Documentation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Separation of AI reasoning and execution authority | [ADR-0001](adr/0001-separate-ai-reasoning-from-execution-authority.md) | Architecture Overview, Governance Approval Workflow, End-to-End AI Request Lifecycle | [ARCHITECTURE.md](ARCHITECTURE.md), [GOVERNANCE.md](GOVERNANCE.md) |
 | Identity-first authorization | [ADR-0002](adr/0002-identity-first-authorization.md) | Trust Boundaries, Zero Trust Reference Architecture | [ARCHITECTURE.md](ARCHITECTURE.md), [THREAT_MODEL.md](THREAT_MODEL.md) |
 | Evidence by design | [ADR-0003](adr/0003-evidence-by-design.md) | Evidence Lifecycle, End-to-End AI Request Lifecycle | [GOVERNANCE.md](GOVERNANCE.md), [DIAGRAMS.md](DIAGRAMS.md) |

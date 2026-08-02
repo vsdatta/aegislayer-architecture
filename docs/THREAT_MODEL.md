@@ -371,7 +371,7 @@ Representative abuse cases include:
 ## Security Control Mapping
 
 | Threat | Primary Control Families |
-|---|---|
+| --- | --- |
 | Prompt injection | provenance, policy isolation, tool authorization, context controls |
 | Excessive agency | least privilege, approvals, runtime constraints |
 | Credential theft | secret isolation, scoped credentials, rotation, redaction |
