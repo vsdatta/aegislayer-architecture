@@ -20,7 +20,7 @@ This repository serves as the public architecture, research, and educational hub
 
 ## Documentation Website
 
-- GitHub Pages: <https://vsdatta.github.io/aegislayer-architecture/>
+- Documentation Home: [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md)
 
 ## Documentation Map
 
