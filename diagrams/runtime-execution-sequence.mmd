@@ -1,0 +1,67 @@
+sequenceDiagram
+    autonumber
+    actor U as User or Upstream System
+    participant A as AI Agent
+    participant I as Identity and Authority Service
+    participant P as Policy and Risk Engine
+    participant H as Human Approval Service
+    participant C as Capability Broker
+    participant R as Controlled Runtime
+    participant T as Tool or Connector
+    participant E as Evidence and Audit Layer
+    participant M as Monitoring and Response
+
+    U->>A: Submit request
+    A->>E: Record request origin and intent
+    A->>I: Validate identity, role, and delegated authority
+
+    alt Identity or authority cannot be verified
+        I-->>A: Deny
+        A->>E: Record denial reason
+        A-->>U: Refuse or escalate
+    else Identity and authority verified
+        I-->>A: Verified trust context
+        A->>P: Submit structured action request
+        P->>E: Record policy inputs and evaluation
+
+        alt Policy denies action
+            P-->>A: Deny
+            A->>E: Record policy denial
+            A-->>U: Refuse request
+        else Additional approval required
+            P-->>A: Approval required
+            A->>H: Request scoped approval
+            H->>E: Record approval decision
+
+            alt Approval denied or expired
+                H-->>A: Deny
+                A-->>U: Refuse or request revised scope
+            else Approval granted
+                H-->>A: Approved scope and validity
+                A->>C: Request constrained capability
+            end
+        else Policy allows with constraints
+            P-->>A: Allowed scope and constraints
+            A->>C: Request constrained capability
+        end
+
+        C->>E: Record issued capability and limits
+        C-->>R: Issue time-limited, least-privilege capability
+        R->>E: Record execution start
+        R->>T: Invoke approved action
+        T-->>R: Return result or error
+        R->>E: Record result, status, and integrity metadata
+        R->>M: Emit telemetry and security events
+
+        alt Anomaly or policy violation detected
+            M->>C: Revoke or suspend capability
+            M->>R: Contain, cancel, or isolate execution
+            M->>E: Record incident and containment actions
+            R-->>A: Execution contained
+            A-->>U: Report controlled failure or escalation
+        else Execution completes within constraints
+            M->>E: Record normal completion telemetry
+            R-->>A: Return verified result
+            A-->>U: Deliver result
+        end
+    end
