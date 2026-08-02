@@ -2,6 +2,12 @@
 
 > **AI-Native Security, Governance, and Runtime Protection**
 
+[![Docs Quality](https://github.com/vsdatta/aegislayer-architecture/actions/workflows/docs-quality.yml/badge.svg)](https://github.com/vsdatta/aegislayer-architecture/actions/workflows/docs-quality.yml)
+[![Deploy Documentation](https://github.com/vsdatta/aegislayer-architecture/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/vsdatta/aegislayer-architecture/actions/workflows/deploy-docs.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
+![AegisLayer Repository Banner](assets/repository-banner.svg)
+
 A public reference architecture for secure, governed, observable, and auditable AI systems.
 
 ## Overview
@@ -11,6 +17,26 @@ The future of artificial intelligence depends not only on intelligence, but also
 AegisLayer is an AI-native security and governance initiative developed by **VND TECH LLC**. It explores architectural approaches for securing autonomous and agentic AI systems through runtime governance, policy enforcement, controlled execution, evidence preservation, human oversight, and defense in depth.
 
 This repository serves as the public architecture, research, and educational hub for AegisLayer.
+
+## Documentation Website
+
+- GitHub Pages: <https://vsdatta.github.io/aegislayer-architecture/>
+
+## Documentation Map
+
+- Getting Started: [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md)
+- Architecture Reference Guide: [docs/REFERENCE_ARCHITECTURE_GUIDE.md](docs/REFERENCE_ARCHITECTURE_GUIDE.md)
+- Vision: [docs/VISION.md](docs/VISION.md)
+- Architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+- Threat Model: [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md)
+- Governance: [docs/GOVERNANCE.md](docs/GOVERNANCE.md)
+- Diagram Catalog: [docs/DIAGRAMS.md](docs/DIAGRAMS.md)
+- Control Mapping: [docs/CONTROL_MAPPING.md](docs/CONTROL_MAPPING.md)
+- Pattern Library: [docs/PATTERN_LIBRARY.md](docs/PATTERN_LIBRARY.md)
+- Reference Examples: [docs/REFERENCE_EXAMPLES.md](docs/REFERENCE_EXAMPLES.md)
+- ADR Index: [docs/adr/README.md](docs/adr/README.md)
+- RFC Index: [docs/rfc/README.md](docs/rfc/README.md)
+- Repository Maturity: [docs/REPOSITORY_MATURITY_MODEL.md](docs/REPOSITORY_MATURITY_MODEL.md)
 
 ## The Problem
 
@@ -170,25 +196,21 @@ This public repository does not disclose:
 
 ## Current Status
 
-AegisLayer is under active research and development.
+AegisLayer documentation is published as a public **v1.0 reference architecture baseline** and remains under active maintenance.
 
 The documentation in this repository describes architectural goals, design principles, and research directions. It should not be interpreted as a claim that every described capability is currently deployed, independently certified, or capable of preventing every cyberattack.
 
 No system can guarantee complete protection from hacking. AegisLayer is intended to help reduce risk, constrain unauthorized execution, improve visibility, preserve evidence, and support stronger detection, containment, governance, and recovery.
 
-## Planned Documentation
+## Release Baseline
 
-Future additions may include:
+The current documentation baseline includes:
 
-- `VISION.md`
-- `ARCHITECTURE.md`
-- `THREAT_MODEL.md`
-- `GOVERNANCE.md`
-- `SECURITY.md`
-- `ROADMAP.md`
-- Reference architecture diagrams
-- Demonstration Spaces
-- Public research materials
+- Public vision, architecture, governance, and threat-model documentation
+- Diagram catalog and Mermaid source library
+- ADR and RFC governance framework
+- Control mapping, pattern library, and reference examples
+- Documentation quality automation and GitHub Pages deployment workflow
 
 ## Responsible Disclosure
 

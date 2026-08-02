@@ -12,12 +12,22 @@ This document provides conceptual examples showing how the public AegisLayer gov
 7. Evidence and telemetry are recorded.
 8. Results are returned and the request is finalized.
 
+Expected governance outcome:
+
+- Execution proceeds only when trust conditions are satisfied.
+- Evidence is sufficient for independent review.
+
 ## Example 2: Connector Health Failure
 1. Connector selected.
 2. Health verification fails.
 3. Execution does not proceed.
 4. Evidence records the denial.
 5. Alternative routing or escalation is considered according to policy.
+
+Expected governance outcome:
+
+- Connector unreadiness fails closed.
+- No implicit fallback broadens privileges.
 
 ## Example 3: High-Impact Operation
 1. Action exceeds governance threshold.
@@ -26,6 +36,11 @@ This document provides conceptual examples showing how the public AegisLayer gov
 4. Execution proceeds only after approval.
 5. All actions are correlated with evidence.
 
+Expected governance outcome:
+
+- Approval remains request-specific, time-bound, and attributable.
+- Expired or mismatched approval blocks execution.
+
 ## Example 4: Continuous Verification
 1. Long-running workflow begins.
 2. Monitoring detects approval expiry.
@@ -33,9 +48,24 @@ This document provides conceptual examples showing how the public AegisLayer gov
 4. Runtime pauses or stops execution.
 5. Incident and audit records are preserved.
 
+Expected governance outcome:
+
+- Stale trust state triggers containment.
+- Recovery decisions are evidence-backed.
+
+## Example-to-Pattern Mapping
+
+| Example | Primary Pattern | Related ADRs |
+|---|---|---|
+| Governed AI Request | Governed Request Flow | ADR-0001, ADR-0002, ADR-0003, ADR-0004 |
+| Connector Health Failure | Connector Invocation | ADR-0004, ADR-0005 |
+| High-Impact Operation | High-Impact Action | ADR-0007 |
+| Continuous Verification | Continuous Trust | ADR-0006 |
+
 ## Related Documentation
-- GOVERNANCE.md
-- THREAT_MODEL.md
-- CONTROL_MAPPING.md
-- PATTERN_LIBRARY.md
-- ADR-0001 through ADR-0007
+
+- [Governance](GOVERNANCE.md)
+- [Threat Model](THREAT_MODEL.md)
+- [Control Mapping](CONTROL_MAPPING.md)
+- [Pattern Library](PATTERN_LIBRARY.md)
+- [ADR Index](adr/README.md)

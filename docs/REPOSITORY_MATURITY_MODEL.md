@@ -37,13 +37,28 @@ This document defines conceptual maturity levels for the public AegisLayer archi
 - Governance artifacts evolve through RFCs and ADRs.
 - Examples and diagrams remain synchronized with documentation.
 
+## Current Target
+
+Target release baseline: **v1.0 documentation release**.
+
+This baseline focuses on publication quality for public architecture documentation, governance artifacts, diagram consistency, and contribution readiness.
+
 ## Assessment Checklist
-- [ ] Core documentation complete
-- [ ] Diagram library complete
-- [ ] ADR library complete
-- [ ] RFC framework complete
-- [ ] Control mapping maintained
-- [ ] Pattern library maintained
-- [ ] Reference examples available
-- [ ] Published documentation validated
-- [ ] Community review process active
+
+- [x] Core documentation complete
+- [x] Diagram library complete
+- [x] ADR library complete
+- [x] RFC framework complete
+- [x] Control mapping maintained
+- [x] Pattern library maintained
+- [x] Reference examples available
+- [x] Published documentation validated
+- [x] Community review process active
+
+## Release-Gate Checks
+
+- [x] Every documentation page is reachable through MkDocs navigation.
+- [x] Architectural terminology is consistent across docs and diagrams.
+- [x] ADR and RFC indexes are integrated into site navigation.
+- [x] Governance, control mapping, patterns, and examples cross-reference each other.
+- [x] Documentation quality workflows exist for Markdown, links, and Mermaid source checks.

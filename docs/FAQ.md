@@ -42,7 +42,7 @@ The public threat model includes:
 - Evidence tampering
 - Approval bypass
 - Unsafe automation
-- Insider threats
+- Insider threat
 
 See `THREAT_MODEL.md` for details.
 
@@ -128,9 +128,9 @@ Planned public work includes:
 - Reference diagrams
 - Governance and threat-control mappings
 - Public examples
-- Demonstration tools
+- Demonstration-oriented walkthroughs
 - Selected reusable components where appropriate
-- Hugging Face and GitHub documentation alignment
+- Incremental documentation quality automation
 
 See `../ROADMAP.md`.
 

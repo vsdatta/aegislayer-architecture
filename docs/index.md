@@ -28,6 +28,14 @@ An AI system may be able to propose an action, but real-world execution should r
 
     [:octicons-arrow-right-24: Explore the architecture](ARCHITECTURE.md)
 
+-   :material-map-marker-path:{ .lg .middle } **Reference Guide**
+
+    ---
+
+    Follow the canonical documentation map across architecture, governance, and controls.
+
+    [:octicons-arrow-right-24: Open the reference guide](REFERENCE_ARCHITECTURE_GUIDE.md)
+
 -   :material-shield-alert-outline:{ .lg .middle } **Threat Model**
 
     ---
@@ -51,6 +59,54 @@ An AI system may be able to propose an action, but real-world execution should r
     Get concise answers to common questions about AegisLayer and its public scope.
 
     [:octicons-arrow-right-24: Open the FAQ](FAQ.md)
+
+-   :material-compass-outline:{ .lg .middle } **Getting Started**
+
+    ---
+
+    Use the recommended reading order and contribution-safe workflow.
+
+    [:octicons-arrow-right-24: Start here](GETTING_STARTED.md)
+
+-   :material-shield-check-outline:{ .lg .middle } **Control Mapping**
+
+    ---
+
+    See how principles map across ADRs, diagrams, and core documentation.
+
+    [:octicons-arrow-right-24: View control mapping](CONTROL_MAPPING.md)
+
+-   :material-shape-outline:{ .lg .middle } **Pattern Library**
+
+    ---
+
+    Reuse conceptual governance and runtime patterns.
+
+    [:octicons-arrow-right-24: Browse patterns](PATTERN_LIBRARY.md)
+
+-   :material-file-document-multiple-outline:{ .lg .middle } **Reference Examples**
+
+    ---
+
+    Review end-to-end examples for approvals, connector safety, and continuous verification.
+
+    [:octicons-arrow-right-24: Read examples](REFERENCE_EXAMPLES.md)
+
+-   :material-source-branch:{ .lg .middle } **Architecture Decisions**
+
+    ---
+
+    Review accepted ADRs and proposal workflows.
+
+    [:octicons-arrow-right-24: Open ADR index](adr/README.md)
+
+-   :material-file-tree-outline:{ .lg .middle } **Requests for Comments**
+
+    ---
+
+    Propose and review significant architecture changes through the RFC process.
+
+    [:octicons-arrow-right-24: Open RFC index](rfc/README.md)
 
 -   :material-book-alphabet:{ .lg .middle } **Glossary**
 
@@ -109,8 +165,9 @@ AegisLayer is under active research and development. The documentation describes
 
 - [GitHub Repository](https://github.com/vsdatta/aegislayer-architecture)
 - [AegisLayer Website](https://aegislayer.ai)
-- [Security Policy](../SECURITY.md)
-- [Contributing Guide](../CONTRIBUTING.md)
-- [Roadmap](../ROADMAP.md)
+- [Security Policy](https://github.com/vsdatta/aegislayer-architecture/blob/main/SECURITY.md)
+- [Contributing Guide](https://github.com/vsdatta/aegislayer-architecture/blob/main/CONTRIBUTING.md)
+- [Roadmap](https://github.com/vsdatta/aegislayer-architecture/blob/main/ROADMAP.md)
+- [Changelog](https://github.com/vsdatta/aegislayer-architecture/blob/main/CHANGELOG.md)
 
 Copyright © VND TECH LLC.

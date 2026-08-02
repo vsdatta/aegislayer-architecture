@@ -130,6 +130,19 @@ When adding or revising diagrams:
 5. Update this catalog and `CHANGELOG.md` when the public diagram set changes materially.
 6. Keep terminology aligned with `GLOSSARY.md`.
 
+## Cross-Reference Checklist
+
+For each material diagram change, verify alignment with:
+
+- [Architecture](ARCHITECTURE.md)
+- [Governance](GOVERNANCE.md)
+- [Threat Model](THREAT_MODEL.md)
+- [Control Mapping](CONTROL_MAPPING.md)
+- [Pattern Library](PATTERN_LIBRARY.md)
+- [Reference Examples](REFERENCE_EXAMPLES.md)
+- [ADR Index](adr/README.md)
+- [Architecture Review Checklist](ARCHITECTURE_REVIEW_CHECKLIST.md)
+
 ## Rendering
 
 GitHub and the MkDocs site can render Mermaid diagrams when they are embedded in fenced `mermaid` blocks. The `.mmd` files remain the canonical editable sources for the diagram library.

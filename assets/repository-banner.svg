@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">AegisLayer Placeholder Repository Banner</title>
+  <desc id="desc">A geometric banner with layered blocks and a shield motif.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <rect x="0" y="240" width="1200" height="80" fill="#0b1220" opacity="0.45"/>
+  <polygon points="200,40 300,90 300,170 200,280 100,170 100,90" fill="#e2e8f0" opacity="0.9"/>
+  <polygon points="200,74 265,106 265,160 200,232 135,160 135,106" fill="#0ea5a6"/>
+  <rect x="380" y="88" width="720" height="30" fill="#e2e8f0" opacity="0.95"/>
+  <rect x="380" y="136" width="560" height="18" fill="#cbd5e1" opacity="0.9"/>
+  <rect x="380" y="172" width="620" height="18" fill="#cbd5e1" opacity="0.9"/>
+</svg>

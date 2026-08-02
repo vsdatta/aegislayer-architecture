@@ -26,11 +26,20 @@ theme:
 
 nav:
   - Home: index.md
+  - Getting Started: GETTING_STARTED.md
   - Vision: VISION.md
   - Architecture: ARCHITECTURE.md
+  - Reference Architecture Guide: REFERENCE_ARCHITECTURE_GUIDE.md
   - Diagram Catalog: DIAGRAMS.md
   - Threat Model: THREAT_MODEL.md
   - Governance: GOVERNANCE.md
+  - Security Design Principles: SECURITY_DESIGN_PRINCIPLES.md
+  - Control Mapping: CONTROL_MAPPING.md
+  - Pattern Library: PATTERN_LIBRARY.md
+  - Reference Examples: REFERENCE_EXAMPLES.md
+  - Architecture Review Checklist: ARCHITECTURE_REVIEW_CHECKLIST.md
+  - Repository Maturity Model: REPOSITORY_MATURITY_MODEL.md
+  - Release Notes v1.0: RELEASE_NOTES_v1.0.md
   - Architecture Decisions:
       - ADR Index: adr/README.md
       - ADR Template: adr/0000-template.md
@@ -41,6 +50,9 @@ nav:
       - Capability-Scoped Connectors: adr/0005-capability-scoped-connectors.md
       - Continuous Verification: adr/0006-continuous-verification-and-monitoring.md
       - Human Approval for High-Impact Actions: adr/0007-human-approval-for-high-impact-actions.md
+  - Requests for Comments:
+      - RFC Index: rfc/README.md
+      - RFC Template: rfc/0000-template.md
   - FAQ: FAQ.md
   - Glossary: GLOSSARY.md
   - Project:
@@ -48,6 +60,7 @@ nav:
       - Changelog: https://github.com/vsdatta/aegislayer-architecture/blob/main/CHANGELOG.md
       - Security: https://github.com/vsdatta/aegislayer-architecture/blob/main/SECURITY.md
       - Contributing: https://github.com/vsdatta/aegislayer-architecture/blob/main/CONTRIBUTING.md
+      - Code of Conduct: https://github.com/vsdatta/aegislayer-architecture/blob/main/CODE_OF_CONDUCT.md
 
 markdown_extensions:
   - admonition
@@ -68,7 +81,8 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
-  - search
+  - search:
+      separator: '[\s\-]+'
 
 extra:
   social:

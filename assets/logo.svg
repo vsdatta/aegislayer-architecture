@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">AegisLayer Placeholder Logo</title>
+  <desc id="desc">A geometric shield-like mark with layered shapes.</desc>
+  <rect width="240" height="240" fill="#ffffff"/>
+  <polygon points="120,20 210,60 210,130 120,220 30,130 30,60" fill="#0f172a"/>
+  <polygon points="120,44 188,74 188,122 120,196 52,122 52,74" fill="#e2e8f0"/>
+  <polygon points="120,70 166,92 166,116 120,168 74,116 74,92" fill="#0ea5a6"/>
+</svg>
