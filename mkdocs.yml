@@ -28,15 +28,16 @@ nav:
   - Home: index.md
   - Vision: VISION.md
   - Architecture: ARCHITECTURE.md
+  - Diagram Catalog: DIAGRAMS.md
   - Threat Model: THREAT_MODEL.md
   - Governance: GOVERNANCE.md
   - FAQ: FAQ.md
   - Glossary: GLOSSARY.md
   - Project:
-      - Roadmap: ../ROADMAP.md
-      - Changelog: ../CHANGELOG.md
-      - Security: ../SECURITY.md
-      - Contributing: ../CONTRIBUTING.md
+      - Roadmap: https://github.com/vsdatta/aegislayer-architecture/blob/main/ROADMAP.md
+      - Changelog: https://github.com/vsdatta/aegislayer-architecture/blob/main/CHANGELOG.md
+      - Security: https://github.com/vsdatta/aegislayer-architecture/blob/main/SECURITY.md
+      - Contributing: https://github.com/vsdatta/aegislayer-architecture/blob/main/CONTRIBUTING.md
 
 markdown_extensions:
   - admonition
