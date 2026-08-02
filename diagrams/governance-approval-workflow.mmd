@@ -1,0 +1,63 @@
+flowchart TD
+    A[Proposed AI Action] --> B[Establish Requester Identity and Authority]
+    B --> C{Authority Valid?}
+
+    C -- No --> D[Deny and Record Reason]
+    C -- Yes --> E[Classify Impact, Sensitivity, and Reversibility]
+
+    E --> F[Evaluate Policy and Risk]
+    F --> G{Policy Outcome}
+
+    G -- Deny --> D
+    G -- Allow --> H[Issue Constrained Execution Authorization]
+    G -- Allow with Constraints --> I[Attach Scope, Limits, and Expiry]
+    G -- Approval Required --> J[Route to Qualified Approver]
+    G -- Specialist Review Required --> K[Route to Security, Legal, or Domain Reviewer]
+
+    K --> J
+    J --> L{Approval Decision}
+
+    L -- Denied --> M[Record Decision and Return to Requester]
+    L -- More Evidence Required --> N[Request Additional Evidence or Revised Scope]
+    L -- Approved --> O[Validate Approver Authority and Separation of Duties]
+
+    N --> F
+    O --> P{Approval Still Valid and Context Unchanged?}
+
+    P -- No --> Q[Expire Approval and Re-evaluate]
+    P -- Yes --> R[Bind Approval to Request, Target, Scope, and Time]
+
+    Q --> F
+    I --> R
+    R --> H
+
+    H --> S[Execute Within Controlled Runtime]
+    S --> T[Generate Evidence, Audit, and Telemetry]
+    T --> U{Outcome}
+
+    U -- Completed --> V[Verify Result and Close Decision Record]
+    U -- Failed --> W[Record Failure, Retry, or Compensation]
+    U -- Incident --> X[Contain, Revoke, Escalate, and Preserve Evidence]
+
+    D --> Y[Finalize Governance Record]
+    M --> Y
+    V --> Y
+    W --> Y
+    X --> Y
+
+    Z[Policy Owner] -. defines rules .-> F
+    AA[Risk Owner] -. sets thresholds .-> E
+    AB[Auditor or Reviewer] -. reviews evidence .-> Y
+    AC[Incident Authority] -. directs response .-> X
+
+    classDef intake fill:#eef4ff,stroke:#1f4b99,stroke-width:1px;
+    classDef decision fill:#fff7e6,stroke:#8a5a00,stroke-width:1px;
+    classDef approval fill:#f5f0ff,stroke:#6b3fa0,stroke-width:1px;
+    classDef execution fill:#f0fff4,stroke:#2e7d32,stroke-width:1px;
+    classDef control fill:#f5f5f5,stroke:#555,stroke-width:1px;
+
+    class A,B,E,F,N intake;
+    class C,G,L,P,U decision;
+    class J,K,O,Q,R approval;
+    class H,I,S,T,V,W,X,Y execution;
+    class Z,AA,AB,AC control;
