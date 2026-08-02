@@ -1,0 +1,65 @@
+flowchart TD
+    A[1. Request Initiation] --> B[2. Capture Identity, Origin, and Intent]
+    B --> C[3. Normalize Action, Target, Scope, and Data]
+    C --> D[4. Evaluate Identity, Authority, Policy, and Risk]
+    D --> E{5. Decision}
+
+    E -- Deny --> F[Record Denial and Return Safe Response]
+    E -- Revise --> G[Request More Evidence or Narrower Scope]
+    E -- Approve --> H[Bind Approval to Request and Validity Period]
+    E -- Allow with Constraints --> I[Attach Runtime Limits and Capability Scope]
+
+    G --> C
+    H --> J[6. Select Connector, Tool, or Execution Path]
+    I --> J
+
+    J --> K[7. Validate Compatibility, Health, and Readiness]
+    K --> L{Ready and Trusted?}
+
+    L -- No --> M[Fail Closed, Re-route, or Escalate]
+    L -- Yes --> N[8. Issue Short-Lived Least-Privilege Capability]
+
+    N --> O[9. Execute in Controlled Runtime]
+    O --> P[10. Validate Inputs, Parameters, Resources, and Outputs]
+    P --> Q[11. Generate Evidence, Audit Events, and Telemetry]
+    Q --> R{12. Outcome}
+
+    R -- Success --> S[Verify Result and Deliver Approved Output]
+    R -- Recoverable Failure --> T[Retry Within Bounds or Compensate]
+    R -- Policy Violation --> U[Cancel, Revoke, and Record Violation]
+    R -- Security Incident --> V[Contain, Isolate, Preserve Evidence, and Escalate]
+
+    T --> Q
+    U --> W[13. Finalize Governance and Evidence Record]
+    V --> W
+    S --> W
+    F --> W
+    M --> W
+
+    W --> X[14. Review, Retain, Learn, and Improve Controls]
+
+    Y1[Continuous Monitoring] -. observes .-> O
+    Y1 -. observes .-> P
+    Y1 -. observes .-> Q
+    Y2[Context Re-evaluation] -. may revoke .-> N
+    Y2 -. may interrupt .-> O
+    Y3[Correlation and Causation IDs] -. link all stages .-> B
+    Y3 -. link all stages .-> Q
+    Y3 -. link all stages .-> W
+    Y4[Human Accountability] -. applies to .-> H
+    Y4 -. applies to .-> V
+    Y4 -. applies to .-> X
+
+    classDef intake fill:#f5f0ff,stroke:#6b3fa0,stroke-width:1px;
+    classDef governance fill:#eef4ff,stroke:#1f4b99,stroke-width:1px;
+    classDef decision fill:#fff7e6,stroke:#8a5a00,stroke-width:1px;
+    classDef runtime fill:#f0fff4,stroke:#2e7d32,stroke-width:1px;
+    classDef incident fill:#fff2f2,stroke:#a33,stroke-width:1px;
+    classDef crosscut fill:#f5f5f5,stroke:#555,stroke-width:1px;
+
+    class A,B,C intake;
+    class D,H,I,J,K,N,Q,W,X governance;
+    class E,L,R decision;
+    class O,P,S,T runtime;
+    class F,G,M,U,V incident;
+    class Y1,Y2,Y3,Y4 crosscut;
