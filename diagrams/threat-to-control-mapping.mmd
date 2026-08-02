@@ -1,0 +1,111 @@
+flowchart LR
+    subgraph T[Threat Categories]
+        T1[Prompt Injection]
+        T2[Unauthorized Tool Use]
+        T3[Credential Theft]
+        T4[Privilege Escalation]
+        T5[Data Poisoning]
+        T6[Artifact Tampering]
+        T7[Supply-Chain Compromise]
+        T8[Sensitive Data Exposure]
+        T9[Evidence Tampering]
+        T10[Approval Bypass]
+        T11[Resource Exhaustion]
+        T12[Unsafe Automation]
+        T13[Insider Threat]
+    end
+
+    subgraph C[Primary Control Families]
+        C1[Input Provenance and Context Isolation]
+        C2[Identity, Authorization, and Least Privilege]
+        C3[Policy Evaluation and Approval Gates]
+        C4[Capability-Scoped Runtime Controls]
+        C5[Secret Isolation and Credential Rotation]
+        C6[Integrity Verification and Signed Artifacts]
+        C7[Data Classification, Minimization, and Redaction]
+        C8[Append-Oriented Evidence and Hash Linkage]
+        C9[Monitoring, Detection, and Incident Response]
+        C10[Quotas, Timeouts, and Circuit Breakers]
+        C11[Idempotency, Compensation, and Cancellation]
+        C12[Separation of Duties and Access Review]
+    end
+
+    T1 --> C1
+    T1 --> C3
+    T1 --> C4
+
+    T2 --> C2
+    T2 --> C3
+    T2 --> C4
+
+    T3 --> C5
+    T3 --> C2
+    T3 --> C9
+
+    T4 --> C2
+    T4 --> C3
+    T4 --> C12
+
+    T5 --> C1
+    T5 --> C6
+    T5 --> C9
+
+    T6 --> C6
+    T6 --> C9
+
+    T7 --> C6
+    T7 --> C9
+    T7 --> C12
+
+    T8 --> C2
+    T8 --> C7
+    T8 --> C9
+
+    T9 --> C8
+    T9 --> C12
+    T9 --> C9
+
+    T10 --> C3
+    T10 --> C8
+    T10 --> C12
+
+    T11 --> C10
+    T11 --> C9
+
+    T12 --> C4
+    T12 --> C10
+    T12 --> C11
+
+    T13 --> C2
+    T13 --> C8
+    T13 --> C12
+    T13 --> C9
+
+    subgraph O[Desired Security Outcomes]
+        O1[Constrain Unauthorized Execution]
+        O2[Reduce Data and Credential Exposure]
+        O3[Preserve Verifiable Evidence]
+        O4[Detect and Contain Compromise]
+        O5[Support Recovery and Accountability]
+    end
+
+    C1 --> O1
+    C2 --> O1
+    C3 --> O1
+    C4 --> O1
+    C5 --> O2
+    C7 --> O2
+    C6 --> O3
+    C8 --> O3
+    C9 --> O4
+    C10 --> O4
+    C11 --> O5
+    C12 --> O5
+
+    classDef threat fill:#fff2f2,stroke:#a33,stroke-width:1px;
+    classDef control fill:#eef4ff,stroke:#1f4b99,stroke-width:1px;
+    classDef outcome fill:#f0fff4,stroke:#2e7d32,stroke-width:1px;
+
+    class T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13 threat;
+    class C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12 control;
+    class O1,O2,O3,O4,O5 outcome;
