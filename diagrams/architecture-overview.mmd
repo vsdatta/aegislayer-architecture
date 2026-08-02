@@ -1,0 +1,27 @@
+flowchart TD
+    A[Users, Systems, and AI Agents] --> B[Identity and Trust Context]
+    B --> C[Intent and Request Analysis]
+    C --> D[Policy and Risk Evaluation]
+    D --> E{Approval Required?}
+    E -- No --> F[Controlled Execution Runtime]
+    E -- Yes --> G[Human or Multi-Party Approval]
+    G --> F
+    F --> H[Evidence and Audit Layer]
+    H --> I[Monitoring and Response]
+    I --> J[External Tools, Data, and Systems]
+
+    K[Threat Intelligence] -. informs .-> D
+    L[Security Telemetry] -. feeds .-> I
+    M[Governance Policies] -. governs .-> D
+    N[Capability Boundaries] -. constrain .-> F
+    O[Incident Response] -. contains .-> I
+
+    classDef trust fill:#f5f5f5,stroke:#333,stroke-width:1px;
+    classDef control fill:#eef4ff,stroke:#1f4b99,stroke-width:1px;
+    classDef decision fill:#fff7e6,stroke:#8a5a00,stroke-width:1px;
+    classDef external fill:#f3fff3,stroke:#2e7d32,stroke-width:1px;
+
+    class A,J external;
+    class B,C,D,F,H,I control;
+    class E decision;
+    class G,K,L,M,N,O trust;
