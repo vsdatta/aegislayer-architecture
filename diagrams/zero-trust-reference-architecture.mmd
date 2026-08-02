@@ -1,0 +1,70 @@
+flowchart TD
+    A[Human User, Service, or AI Agent] --> B[Continuous Identity Verification]
+    B --> C[Device, Session, and Workload Context]
+    C --> D[Intent, Target, and Data Classification]
+    D --> E[Policy and Risk Evaluation]
+    E --> F{Trust Conditions Satisfied?}
+
+    F -- No --> G[Deny, Contain, or Escalate]
+    F -- Yes --> H[Issue Short-Lived Scoped Capability]
+
+    H --> I[Controlled Execution Runtime]
+    I --> J[Connector or Tool Gateway]
+    J --> K[Protected Resource]
+
+    K --> L[Validate Output and Data Flow]
+    L --> M[Record Evidence and Telemetry]
+    M --> N[Continuous Monitoring and Re-evaluation]
+    N --> O{Risk or Context Changed?}
+
+    O -- No --> P[Continue Within Authorized Scope]
+    O -- Yes --> Q[Revoke Capability, Cancel, or Reauthorize]
+
+    P --> I
+    Q --> G
+
+    subgraph Principles[Zero Trust Principles]
+        Z1[Never Trust Implicitly]
+        Z2[Verify Explicitly]
+        Z3[Use Least Privilege]
+        Z4[Assume Breach]
+        Z5[Inspect Every Trust-Boundary Crossing]
+        Z6[Continuously Re-evaluate]
+    end
+
+    Z1 -. governs .-> B
+    Z2 -. governs .-> E
+    Z3 -. governs .-> H
+    Z4 -. governs .-> I
+    Z5 -. governs .-> J
+    Z6 -. governs .-> N
+
+    subgraph Control_Planes[Independent Control Planes]
+        C1[Identity and Authority]
+        C2[Policy and Approval]
+        C3[Capability and Credential Brokerage]
+        C4[Runtime Isolation]
+        C5[Evidence and Audit]
+        C6[Monitoring and Incident Response]
+    end
+
+    C1 -. supplies context .-> B
+    C2 -. makes decisions .-> E
+    C3 -. issues and revokes .-> H
+    C4 -. constrains .-> I
+    C5 -. records .-> M
+    C6 -. observes and responds .-> N
+
+    classDef request fill:#f5f0ff,stroke:#6b3fa0,stroke-width:1px;
+    classDef verify fill:#eef4ff,stroke:#1f4b99,stroke-width:1px;
+    classDef decision fill:#fff7e6,stroke:#8a5a00,stroke-width:1px;
+    classDef runtime fill:#f0fff4,stroke:#2e7d32,stroke-width:1px;
+    classDef deny fill:#fff2f2,stroke:#a33,stroke-width:1px;
+    classDef principle fill:#f5f5f5,stroke:#555,stroke-width:1px;
+
+    class A request;
+    class B,C,D,E,H,L,M,N verify;
+    class F,O decision;
+    class I,J,K,P runtime;
+    class G,Q deny;
+    class Z1,Z2,Z3,Z4,Z5,Z6,C1,C2,C3,C4,C5,C6 principle;
