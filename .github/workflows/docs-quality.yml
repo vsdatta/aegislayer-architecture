@@ -1,0 +1,77 @@
+name: Documentation Quality
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - "**/*.mmd"
+      - ".github/workflows/docs-quality.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "**/*.mmd"
+      - ".github/workflows/docs-quality.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@v20
+        with:
+          globs: |
+            **/*.md
+            #node_modules
+
+  link-check:
+    name: Link check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check Markdown links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --accept 200,206,429
+            --exclude-mail
+            --exclude-path node_modules
+            "**/*.md"
+          fail: true
+
+  mermaid-source-check:
+    name: Mermaid source check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify Mermaid source files are non-empty
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(find diagrams -type f -name '*.mmd' -print 2>/dev/null || true)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No Mermaid source files found."
+            exit 0
+          fi
+          for file in "${files[@]}"; do
+            if [ ! -s "$file" ]; then
+              echo "Empty Mermaid file: $file"
+              exit 1
+            fi
+            if ! grep -Eq '^(flowchart|graph|sequenceDiagram|stateDiagram|classDiagram|erDiagram|journey|gantt|pie|mindmap|timeline|quadrantChart|requirementDiagram|gitGraph|C4Context|C4Container|C4Component|C4Dynamic|C4Deployment)' "$file"; then
+              echo "Unrecognized Mermaid declaration in: $file"
+              exit 1
+            fi
+          done
