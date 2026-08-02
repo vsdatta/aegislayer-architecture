@@ -2,7 +2,7 @@
 
 ## Account-Level Actions Required
 
-These steps require Hugging Face or GitHub account permissions and cannot be fully automated from this repository alone.
+These steps still require Hugging Face or GitHub account permissions and remain outside the fully automated launch workflow.
 
 ## Hugging Face Organization Profile
 
@@ -14,46 +14,43 @@ These steps require Hugging Face or GitHub account permissions and cannot be ful
 ## Pinning Repositories
 
 1. Pin `AEGISLAYER/README`.
-2. Pin the most useful supporting Spaces, starting with `architecture-explorer`, `policy-playground`, and `governance-library` after they exist.
-3. Pin datasets or Collections only after the live links are verified.
+2. Pin the most useful supporting Spaces, starting with `architecture-explorer`, `policy-playground`, and `governance-library`.
+3. Pin the AegisLayer Core collection after verifying the live URL.
 
-## Creating New Space Repositories
+## What Is Automated
 
-1. Create each destination Space repository in the `AEGISLAYER` organization if it does not already exist.
-2. Use `Static` as the SDK.
-3. Name repositories to match the manifest defaults unless a different approved target is required.
+- creation or update of the public Static Space repositories
+- publication of generated Space assets from `dist/huggingface/<slug>/`
+- creation or update of the public dataset repositories
+- upload of dataset package contents from `huggingface/datasets/<slug>/`
+- creation or update of the AegisLayer Core collection
+- repository publication status updates under `huggingface/`
 
-## Creating Collections
+## Live Collection
 
-1. Open the Hugging Face Collections UI.
-2. Create each collection using the matching card in `huggingface/collections/`.
-3. Add items in the listed order.
-4. Record the live Collection URLs into release notes or launch posts.
+- AegisLayer Core: <https://huggingface.co/collections/AEGISLAYER/aegislayer-core-6a6f5eafc1742c4f90327c9a>
 
 ## GitHub Repository Variables And Secrets
 
-1. Add secret `HF_TOKEN`.
-2. Add variable `HF_ORG` with the target Hugging Face organization, for example `AEGISLAYER`.
-3. Add variable `HF_SPACE_REPO` for the preserved legacy Space target, for example `AEGISLAYER/README`.
-4. Add variable `HF_SPACE_MANIFEST` only if explicit slug-to-repo overrides are needed.
+1. Keep secret `HF_TOKEN` configured.
+2. Keep variable `HF_ORG` set to `AEGISLAYER` if you want the generic portfolio publish workflows to keep using the organization namespace.
+3. Keep variable `HF_SPACE_REPO` set for the preserved `AEGISLAYER/README` Space.
 
 ## Triggering Workflows
 
-1. Run `Validate Hugging Face Assets`.
-2. Run `Build Hugging Face Datasets`.
-3. Run `Prepare Hugging Face Release`.
-4. Run `Publish Hugging Face Space` to update `AEGISLAYER/README`.
-5. Run `Publish Hugging Face Portfolio` for additional Spaces.
+1. Run `Launch Hugging Face Promotion` for full launch or reconciliation.
+2. Run `Publish Hugging Face Space` to republish only `AEGISLAYER/README`.
+3. Run `Publish Hugging Face Portfolio` for targeted Space-only republishes.
 
 ## Posting Announcements
 
 1. Use the channel copy in `promotion/ANNOUNCEMENT_COPY.md`.
-2. Link directly to the relevant Space, dataset, Collection, or documentation page.
+2. Link directly to the live Space, dataset, or collection URLs recorded in `huggingface/PUBLICATION_STATUS.md`.
 3. Keep the scope note and feedback prompt intact.
 
 ## Rollback
 
-1. Re-run portfolio publication for the last known good commit using workflow dispatch.
-2. If a specific Space is incorrect, republish only that slug from the prior commit.
-3. If a profile change is incorrect, restore the previous approved copy from Git history.
-4. If a Collection item order is incorrect, update it in the Hugging Face UI and note the correction in the release log.
+1. Re-run launch or targeted publish workflows from the last known good commit.
+2. If a specific Space or dataset is incorrect, republish only that artifact from the prior commit.
+3. If profile or pinning changes are incorrect, restore the previous approved copy in the Hugging Face UI.
+4. If collection order needs adjustment, update it in the Hugging Face UI and note the correction in the release log.
