@@ -2,6 +2,12 @@ name: Launch Hugging Face Promotion
 
 "on":
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/launch-hf-promotion.yml
+      - scripts/launch_hf_promotion.py
 
 permissions:
   contents: write
