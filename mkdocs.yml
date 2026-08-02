@@ -31,6 +31,16 @@ nav:
   - Diagram Catalog: DIAGRAMS.md
   - Threat Model: THREAT_MODEL.md
   - Governance: GOVERNANCE.md
+  - Architecture Decisions:
+      - ADR Index: adr/README.md
+      - ADR Template: adr/0000-template.md
+      - Separate Reasoning from Authority: adr/0001-separate-ai-reasoning-from-execution-authority.md
+      - Identity-First Authorization: adr/0002-identity-first-authorization.md
+      - Evidence by Design: adr/0003-evidence-by-design.md
+      - Fail-Closed Execution: adr/0004-fail-closed-execution.md
+      - Capability-Scoped Connectors: adr/0005-capability-scoped-connectors.md
+      - Continuous Verification: adr/0006-continuous-verification-and-monitoring.md
+      - Human Approval for High-Impact Actions: adr/0007-human-approval-for-high-impact-actions.md
   - FAQ: FAQ.md
   - Glossary: GLOSSARY.md
   - Project:
