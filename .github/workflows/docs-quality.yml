@@ -44,7 +44,7 @@ jobs:
           args: >-
             --no-progress
             --accept 200,206,429
-            --exclude-mail
+            --include-mail=false
             --exclude-path node_modules
             "**/*.md"
           fail: true
