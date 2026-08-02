@@ -13,7 +13,7 @@ tags:
   - auditability
   - autonomous-agents
   - zero-trust
-short_description: Static runtime-state explorer for approval pauses, execution, revocation, containment, and completion transitions.
+short_description: Runtime states for approval, execution, and containment.
 ---
 ## AegisLayer Runtime State Visualizer
 

@@ -13,7 +13,7 @@ tags:
   - trustworthy-ai
   - auditability
   - explainability
-short_description: Searchable public index for ADRs, RFCs, glossary terms, patterns, governance references, and release materials.
+short_description: Index of ADRs, RFCs, glossary, patterns, and governance.
 ---
 ## AegisLayer Governance Library
 

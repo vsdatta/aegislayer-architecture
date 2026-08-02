@@ -101,6 +101,9 @@ def validate_metadata(space_dir: Path, slug: str) -> list[str]:
         errors.append(f"Space {slug} must use app_file: index.html")
     if metadata.get("license") != "apache-2.0":
         errors.append(f"Space {slug} must use license: apache-2.0")
+    short_description = metadata.get("short_description")
+    if isinstance(short_description, str) and len(short_description) > 60:
+        errors.append(f"Space {slug} short_description must be 60 characters or fewer")
     return errors
 
 

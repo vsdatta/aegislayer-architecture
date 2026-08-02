@@ -13,7 +13,7 @@ tags:
   - zero-trust
   - agentic-ai
   - ai-security
-short_description: Connector readiness, scoped capability, compatibility, and fail-closed simulation using deterministic state changes.
+short_description: Connector trust and fail-closed capability scenarios.
 ---
 ## AegisLayer Connector Trust Simulator
 

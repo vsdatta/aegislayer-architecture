@@ -8,6 +8,13 @@ name: Launch Hugging Face Promotion
     paths:
       - .github/workflows/launch-hf-promotion.yml
       - scripts/launch_hf_promotion.py
+      - scripts/build_hf_portfolio.py
+      - scripts/build_hf_datasets.py
+      - scripts/validate_hf_assets.py
+      - scripts/validate_hf_datasets.py
+      - huggingface/spaces/**
+      - huggingface/datasets/**
+      - huggingface/collections/collections.json
 
 permissions:
   contents: write

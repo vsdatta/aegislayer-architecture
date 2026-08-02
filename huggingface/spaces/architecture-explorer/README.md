@@ -13,7 +13,7 @@ tags:
   - zero-trust
   - runtime-security
   - auditability
-short_description: Interactive map of architecture layers, trust boundaries, lifecycle artifacts, and linked documentation.
+short_description: Interactive architecture layers and trust boundaries.
 ---
 ## AegisLayer Architecture Explorer
 

@@ -13,7 +13,7 @@ tags:
   - human-in-the-loop
   - governance
   - explainability
-short_description: Deterministic policy scenarios for allow, deny, conditional approval, and escalation outcomes.
+short_description: Deterministic policy scenarios for governed AI actions.
 ---
 ## AegisLayer Policy Playground
 

@@ -13,7 +13,7 @@ tags:
   - zero-trust
   - llm-security
   - governance
-short_description: Explore public threat families, mapped controls, residual risk statements, and linked architecture decisions.
+short_description: Threat families, control mappings, and residual risk.
 ---
 ## AegisLayer Threat Control Explorer
 

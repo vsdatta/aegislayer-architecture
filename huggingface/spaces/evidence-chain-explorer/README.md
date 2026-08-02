@@ -13,7 +13,7 @@ tags:
   - governance
   - trustworthy-ai
   - ai-security
-short_description: Deterministic evidence-sequence explorer for correlation, causation, verification, and chain integrity concepts.
+short_description: Evidence-chain explorer for reviewable AI action records.
 ---
 ## AegisLayer Evidence Chain Explorer
 

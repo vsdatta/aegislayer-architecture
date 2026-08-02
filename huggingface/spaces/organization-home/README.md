@@ -14,7 +14,7 @@ tags:
   - trustworthy-ai
   - responsible-ai
   - zero-trust
-short_description: Public reference architecture, governance resources, and curated AegisLayer portfolio entry point.
+short_description: Public AegisLayer portfolio for docs, demos, and datasets.
 ---
 ## AegisLayer Organization Home
 
