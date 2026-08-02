@@ -41,13 +41,13 @@ Explore synthetic threat entries, mapped control principles, affected assets, an
 
 ## Other AegisLayer Spaces
 
-- [AegisLayer Organization Home](https://huggingface.co/spaces/AEGISLAYER/organization-home)
-- [AegisLayer Architecture Explorer](https://huggingface.co/spaces/AEGISLAYER/architecture-explorer)
-- [AegisLayer Policy Playground](https://huggingface.co/spaces/AEGISLAYER/policy-playground)
-- [AegisLayer Evidence Chain Explorer](https://huggingface.co/spaces/AEGISLAYER/evidence-chain-explorer)
-- [AegisLayer Connector Trust Simulator](https://huggingface.co/spaces/AEGISLAYER/connector-trust-simulator)
-- [AegisLayer Runtime State Visualizer](https://huggingface.co/spaces/AEGISLAYER/runtime-state-visualizer)
-- [AegisLayer Governance Library](https://huggingface.co/spaces/AEGISLAYER/governance-library)
+- [AegisLayer Organization Home](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/organization-home)
+- [AegisLayer Architecture Explorer](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/architecture-explorer)
+- [AegisLayer Policy Playground](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/policy-playground)
+- [AegisLayer Evidence Chain Explorer](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/evidence-chain-explorer)
+- [AegisLayer Connector Trust Simulator](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/connector-trust-simulator)
+- [AegisLayer Runtime State Visualizer](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/runtime-state-visualizer)
+- [AegisLayer Governance Library](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/governance-library)
 
 ## Public Disclaimer
 

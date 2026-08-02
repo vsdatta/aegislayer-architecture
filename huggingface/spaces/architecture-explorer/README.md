@@ -45,13 +45,13 @@ Inspect where authority, execution, connectors, evidence, and recovery controls 
 
 ## Other AegisLayer Spaces
 
-- [AegisLayer Organization Home](https://huggingface.co/spaces/AEGISLAYER/organization-home)
-- [AegisLayer Policy Playground](https://huggingface.co/spaces/AEGISLAYER/policy-playground)
-- [AegisLayer Evidence Chain Explorer](https://huggingface.co/spaces/AEGISLAYER/evidence-chain-explorer)
-- [AegisLayer Threat Control Explorer](https://huggingface.co/spaces/AEGISLAYER/threat-control-explorer)
-- [AegisLayer Connector Trust Simulator](https://huggingface.co/spaces/AEGISLAYER/connector-trust-simulator)
-- [AegisLayer Runtime State Visualizer](https://huggingface.co/spaces/AEGISLAYER/runtime-state-visualizer)
-- [AegisLayer Governance Library](https://huggingface.co/spaces/AEGISLAYER/governance-library)
+- [AegisLayer Organization Home](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/organization-home)
+- [AegisLayer Policy Playground](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/policy-playground)
+- [AegisLayer Evidence Chain Explorer](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/evidence-chain-explorer)
+- [AegisLayer Threat Control Explorer](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/threat-control-explorer)
+- [AegisLayer Connector Trust Simulator](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/connector-trust-simulator)
+- [AegisLayer Runtime State Visualizer](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/runtime-state-visualizer)
+- [AegisLayer Governance Library](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/governance-library)
 
 ## Public Disclaimer
 

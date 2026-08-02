@@ -54,7 +54,7 @@ def render_metadata(space: dict) -> str:
 def render_readme(space: dict, site: dict, spaces: list[dict]) -> str:
     metadata = render_metadata(space)
     cross_links = [
-        f"- [{item['title']}](https://huggingface.co/spaces/AEGISLAYER/{item['slug']})"
+    f"- [{item['title']}](https://github.com/vsdatta/aegislayer-architecture/tree/main/huggingface/spaces/{item['slug']})"
         for item in spaces
         if item["slug"] != space["slug"]
     ]
