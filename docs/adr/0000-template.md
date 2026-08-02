@@ -41,11 +41,11 @@ Describe the option.
 
 **Advantages**
 
-- 
+-
 
 **Disadvantages and risks**
 
-- 
+-
 
 ### Option 2: Name
 
@@ -53,11 +53,11 @@ Describe the option.
 
 **Advantages**
 
-- 
+-
 
 **Disadvantages and risks**
 
-- 
+-
 
 ## Decision
 
@@ -83,15 +83,15 @@ Explain how the decision affects:
 
 ### Positive Consequences
 
-- 
+-
 
 ### Negative Consequences
 
-- 
+-
 
 ### Residual Risks
 
-- 
+-
 
 ## Validation and Acceptance Criteria
 
@@ -121,7 +121,7 @@ Confirm that the ADR does not disclose:
 
 ## References
 
-- 
+-
 
 ## Change History
 
