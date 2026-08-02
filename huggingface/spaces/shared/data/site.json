@@ -1,0 +1,130 @@
+{
+  "organization": {
+    "name": "AegisLayer",
+    "developer": "VND TECH LLC",
+    "mission": "Publish a public reference architecture for governed, accountable, and fail-closed AI-initiated action systems.",
+    "scope": "Conceptual reference architecture, governance documentation, diagrams, public research planning artifacts, synthetic datasets, static demonstrations, and a reference SDK.",
+    "limitations": [
+      "Public materials are conceptual and educational.",
+      "No claim is made that the repository is a production control plane.",
+      "No claim is made of certification, benchmark leadership, or deployed customer telemetry.",
+      "No Space performs external execution, real policy enforcement, or secret-dependent runtime operations."
+    ],
+    "principles": [
+      "Separate AI reasoning from execution authority.",
+      "Validate identity and authority before authorization.",
+      "Evaluate policy before execution.",
+      "Require accountable approval for high-impact actions.",
+      "Scope connector access through explicit capabilities.",
+      "Generate evidence by design.",
+      "Continuously verify runtime trust and fail closed on drift."
+    ],
+    "interests": [
+      "AI governance",
+      "AI security",
+      "agentic AI runtime controls",
+      "responsible AI",
+      "zero-trust architecture",
+      "human-in-the-loop approvals",
+      "auditability and evidence design"
+    ]
+  },
+  "links": {
+    "github_repo": "https://github.com/vsdatta/aegislayer-architecture",
+    "github_pages": "https://vsdatta.github.io/aegislayer-architecture/",
+    "website": "https://aegislayer.ai",
+    "security": "https://github.com/vsdatta/aegislayer-architecture/blob/main/SECURITY.md",
+    "release_notes": "https://github.com/vsdatta/aegislayer-architecture/blob/main/CHANGELOG.md",
+    "research": "https://vsdatta.github.io/aegislayer-architecture/RESEARCH_PROGRAM/",
+    "sdk": "https://github.com/vsdatta/aegislayer-architecture/tree/main/reference-sdk",
+    "docs_home": "https://vsdatta.github.io/aegislayer-architecture/index.html",
+    "contribute": "https://github.com/vsdatta/aegislayer-architecture/blob/main/CONTRIBUTING.md",
+    "release_checklist": "https://vsdatta.github.io/aegislayer-architecture/RELEASE_CHECKLIST/",
+    "threat_model": "https://vsdatta.github.io/aegislayer-architecture/THREAT_MODEL/",
+    "control_mapping": "https://vsdatta.github.io/aegislayer-architecture/CONTROL_MAPPING/",
+    "governance": "https://vsdatta.github.io/aegislayer-architecture/GOVERNANCE/",
+    "architecture": "https://vsdatta.github.io/aegislayer-architecture/ARCHITECTURE/",
+    "interactive_demo": "https://vsdatta.github.io/aegislayer-architecture/INTERACTIVE_DEMO/"
+  },
+  "documentation": [
+    {
+      "title": "Reference Architecture Guide",
+      "url": "https://vsdatta.github.io/aegislayer-architecture/REFERENCE_ARCHITECTURE_GUIDE/",
+      "summary": "Public introduction to the architecture scope, major control planes, and traceability goals."
+    },
+    {
+      "title": "Governance",
+      "url": "https://vsdatta.github.io/aegislayer-architecture/GOVERNANCE/",
+      "summary": "Governance responsibilities, approval expectations, and accountability framing."
+    },
+    {
+      "title": "Threat Control Traceability",
+      "url": "https://vsdatta.github.io/aegislayer-architecture/THREAT_CONTROL_TRACEABILITY/",
+      "summary": "Traceability from public threats to mapped control principles and residual risk."
+    },
+    {
+      "title": "Reference SDK",
+      "url": "https://vsdatta.github.io/aegislayer-architecture/REFERENCE_SDK/",
+      "summary": "Conceptual Python SDK walkthrough with policy, runtime, monitoring, and evidence examples."
+    }
+  ],
+  "architecture_layers": [
+    {
+      "name": "Identity and Authority",
+      "purpose": "Verify who is requesting an action and what explicit authority they hold.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/IDENTITY_AUTHORITY_LIFECYCLE/"
+    },
+    {
+      "name": "Policy Evaluation",
+      "purpose": "Evaluate policy before execution and branch into deny, allow, conditional, or approval-required states.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/POLICY_EVALUATION_LIFECYCLE/"
+    },
+    {
+      "name": "Human Approval",
+      "purpose": "Bind high-impact actions to accountable human decisions with scope and expiry.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/APPROVAL_LIFECYCLE/"
+    },
+    {
+      "name": "Connector Trust",
+      "purpose": "Constrain execution to explicit capabilities and readiness-gated connectors.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/CONNECTOR_LIFECYCLE/"
+    },
+    {
+      "name": "Runtime and Evidence",
+      "purpose": "Track runtime state, produce evidence, and preserve auditability.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/RUNTIME_STATE_MODEL/"
+    },
+    {
+      "name": "Continuous Verification",
+      "purpose": "Re-evaluate trust during runtime and revoke on drift or anomaly.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/CONTINUOUS_VERIFICATION_LIFECYCLE/"
+    },
+    {
+      "name": "Containment and Recovery",
+      "purpose": "Fail closed, contain incidents, and require explicit recovery decisions.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/INCIDENT_CONTAINMENT_RECOVERY/"
+    }
+  ],
+  "trust_boundaries": [
+    {
+      "name": "Reasoning to Authority Boundary",
+      "summary": "A model may propose an action, but authority remains outside the model and must be validated.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/TRUST_BOUNDARY_DEEP_DIVE/"
+    },
+    {
+      "name": "Policy to Execution Boundary",
+      "summary": "Execution proceeds only after policy resolves the request into an explicit permitted state.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/POLICY_EVALUATION_LIFECYCLE/"
+    },
+    {
+      "name": "Connector to Runtime Boundary",
+      "summary": "Connectors expose narrow capability scopes and fail closed when readiness degrades.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/CONNECTOR_LIFECYCLE/"
+    },
+    {
+      "name": "Runtime to Evidence Boundary",
+      "summary": "Every material decision and state transition produces reviewable evidence.",
+      "docs": "https://vsdatta.github.io/aegislayer-architecture/EVIDENCE_LIFECYCLE_DEEP_DIVE/"
+    }
+  ]
+}

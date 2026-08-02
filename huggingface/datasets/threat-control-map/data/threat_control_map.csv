@@ -1,0 +1,7 @@
+threat_id,threat_family,affected_asset,control_principle,related_adr,documentation_link,residual_risk_statement
+TC-001,Unauthorized execution,Runtime executor,Identity-first authorization,ADR-0002,https://vsdatta.github.io/aegislayer-architecture/THREAT_CONTROL_TRACEABILITY/,Stale authority data can still create timing windows until revalidation occurs.
+TC-002,Policy bypass,Policy engine,Policy before execution,ADR-0001,https://vsdatta.github.io/aegislayer-architecture/POLICY_EVALUATION_LIFECYCLE/,Incorrect policy logic can still deny or allow incorrectly if not reviewed.
+TC-003,Approval bypass,Approval service,Human approval for high-impact actions,ADR-0007,https://vsdatta.github.io/aegislayer-architecture/APPROVAL_LIFECYCLE/,Approver fatigue can weaken review quality.
+TC-004,Connector abuse,External connector,Capability-scoped connectors,ADR-0005,https://vsdatta.github.io/aegislayer-architecture/CONNECTOR_LIFECYCLE/,Trusted connectors may still misbehave beyond visible posture signals.
+TC-005,Evidence tampering,Audit evidence,Evidence by design,ADR-0003,https://vsdatta.github.io/aegislayer-architecture/EVIDENCE_LIFECYCLE_DEEP_DIVE/,External storage choices determine final tamper resistance.
+TC-006,Trust drift,Running capability,Continuous verification,ADR-0006,https://vsdatta.github.io/aegislayer-architecture/CONTINUOUS_VERIFICATION_LIFECYCLE/,Detection quality depends on monitoring signal quality and cadence.

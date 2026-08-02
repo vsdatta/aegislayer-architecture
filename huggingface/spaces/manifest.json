@@ -1,0 +1,195 @@
+{
+  "spaces": [
+    {
+      "slug": "organization-home",
+      "default_repo_name": "README",
+      "title": "AegisLayer Organization Home",
+      "emoji": "🛡️",
+      "colorFrom": "green",
+      "colorTo": "yellow",
+      "short_description": "Public reference architecture, governance resources, and curated AegisLayer portfolio entry point.",
+      "pinned": true,
+      "tags": ["ai-governance", "ai-security", "agentic-ai", "trustworthy-ai", "responsible-ai", "zero-trust"],
+      "hero_eyebrow": "AegisLayer Portfolio",
+      "hero_title": "Public governance and security architecture for accountable AI execution",
+      "hero_summary": "Canonical GitHub documentation, deterministic static experiences, public research artifacts, and a conceptual reference SDK published from one reproducible source.",
+      "disclaimer": "AegisLayer is a public reference-architecture and education initiative. These Spaces are deterministic static explainers, not production control planes or live policy enforcement systems.",
+      "sections": [
+        {
+          "heading": "What AegisLayer Publishes",
+          "body": "AegisLayer publishes architecture guidance, governance principles, trust-boundary diagrams, conceptual SDK examples, synthetic datasets, and research planning artifacts for governed AI action systems.",
+          "items": ["Canonical GitHub repository and Pages docs", "Public Hugging Face static Spaces", "Synthetic datasets with schema and limitations", "Reference SDK examples and tests"]
+        },
+        {
+          "heading": "Featured Portfolio",
+          "body": "Use the linked Spaces below to explore specific architecture slices without duplicating the full corpus into each repository.",
+          "type": "space-grid"
+        },
+        {
+          "heading": "Call to Action",
+          "body": "Use AegisLayer as a public architecture reference, compare the principles against your own environment, and review the linked docs before adopting any pattern.",
+          "items": ["Read the documentation", "Explore the SDK", "View research", "Contribute", "Report a security issue"]
+        }
+      ]
+    },
+    {
+      "slug": "architecture-explorer",
+      "default_repo_name": "architecture-explorer",
+      "title": "AegisLayer Architecture Explorer",
+      "emoji": "🏗️",
+      "colorFrom": "green",
+      "colorTo": "blue",
+      "short_description": "Interactive map of architecture layers, trust boundaries, lifecycle artifacts, and linked documentation.",
+      "pinned": false,
+      "tags": ["ai-governance", "ai-security", "zero-trust", "runtime-security", "auditability"],
+      "hero_eyebrow": "Architecture Explorer",
+      "hero_title": "Trace the architecture from trust boundary to runtime outcome",
+      "hero_summary": "Browse layers, lifecycles, diagrams, and documentation links with deterministic examples and no external execution.",
+      "disclaimer": "This Space visualizes public reference content only. It does not introspect a live environment or validate production deployments.",
+      "sections": [
+        {
+          "heading": "Architecture Layers",
+          "body": "Review identity, policy, approval, connector, runtime, evidence, and containment responsibilities as separate but linked control planes.",
+          "type": "architecture-layers"
+        },
+        {
+          "heading": "Trust Boundaries",
+          "body": "Inspect where authority, execution, connectors, evidence, and recovery controls cross boundaries and where fail-closed behavior applies.",
+          "type": "trust-boundaries"
+        }
+      ]
+    },
+    {
+      "slug": "policy-playground",
+      "default_repo_name": "policy-playground",
+      "title": "AegisLayer Policy Playground",
+      "emoji": "📜",
+      "colorFrom": "yellow",
+      "colorTo": "red",
+      "short_description": "Deterministic policy scenarios for allow, deny, conditional approval, and escalation outcomes.",
+      "pinned": false,
+      "tags": ["ai-governance", "responsible-ai", "human-in-the-loop", "governance", "explainability"],
+      "hero_eyebrow": "Policy Playground",
+      "hero_title": "Review scenario outcomes before any execution path begins",
+      "hero_summary": "Compare static policy decisions for low-risk, unauthorized, approval-required, unavailable-connector, expired-capability, and containment conditions.",
+      "disclaimer": "Scenarios are synthetic and deterministic. This Space does not provide live policy enforcement or legal/compliance advice.",
+      "sections": [
+        {
+          "heading": "Policy Scenarios",
+          "body": "Select a deterministic scenario to inspect the request, decision, reason, approval branch, and evidence expectations.",
+          "type": "governance-scenarios"
+        }
+      ]
+    },
+    {
+      "slug": "evidence-chain-explorer",
+      "default_repo_name": "evidence-chain-explorer",
+      "title": "AegisLayer Evidence Chain Explorer",
+      "emoji": "🧾",
+      "colorFrom": "blue",
+      "colorTo": "green",
+      "short_description": "Deterministic evidence-sequence explorer for correlation, causation, verification, and chain integrity concepts.",
+      "pinned": false,
+      "tags": ["auditability", "explainability", "governance", "trustworthy-ai", "ai-security"],
+      "hero_eyebrow": "Evidence Explorer",
+      "hero_title": "See how decisions become verifiable evidence records",
+      "hero_summary": "Follow synthetic request records from identity validation through policy, approval, runtime, monitoring, and containment events.",
+      "disclaimer": "This Space demonstrates evidence concepts using repository-owned sample data. It does not guarantee tamper-proof logging in external systems.",
+      "sections": [
+        {
+          "heading": "Evidence Timeline",
+          "body": "Walk through deterministic evidence records, correlation identifiers, causation links, verification checkpoints, and bundle finalization.",
+          "type": "evidence-chain"
+        }
+      ]
+    },
+    {
+      "slug": "threat-control-explorer",
+      "default_repo_name": "threat-control-explorer",
+      "title": "AegisLayer Threat Control Explorer",
+      "emoji": "🛰️",
+      "colorFrom": "gray",
+      "colorTo": "red",
+      "short_description": "Explore public threat families, mapped controls, residual risk statements, and linked architecture decisions.",
+      "pinned": false,
+      "tags": ["cybersecurity", "ai-security", "zero-trust", "llm-security", "governance"],
+      "hero_eyebrow": "Threat Control Explorer",
+      "hero_title": "Map architecture controls back to threat families and residual risk",
+      "hero_summary": "Review deterministic control mappings with related ADRs, documentation links, and public risk boundaries.",
+      "disclaimer": "Threat mappings are public reference materials and not a substitute for environment-specific threat modeling.",
+      "sections": [
+        {
+          "heading": "Threat Map",
+          "body": "Explore synthetic threat entries, mapped control principles, affected assets, and remaining residual risk statements.",
+          "type": "threat-map"
+        }
+      ]
+    },
+    {
+      "slug": "connector-trust-simulator",
+      "default_repo_name": "connector-trust-simulator",
+      "title": "AegisLayer Connector Trust Simulator",
+      "emoji": "🔌",
+      "colorFrom": "indigo",
+      "colorTo": "green",
+      "short_description": "Connector readiness, scoped capability, compatibility, and fail-closed simulation using deterministic state changes.",
+      "pinned": false,
+      "tags": ["runtime-security", "autonomous-agents", "zero-trust", "agentic-ai", "ai-security"],
+      "hero_eyebrow": "Connector Trust",
+      "hero_title": "Test connector readiness and capability scoping without live execution",
+      "hero_summary": "Compare ready, degraded, blocked, expired, and revoked connector outcomes with deterministic evidence summaries.",
+      "disclaimer": "This Space is a static simulator only. It does not call external systems or hold runtime secrets.",
+      "sections": [
+        {
+          "heading": "Connector States",
+          "body": "Inspect capability scope, health posture, compatibility checks, and fail-closed outcomes for deterministic connector examples.",
+          "type": "connector-scenarios"
+        }
+      ]
+    },
+    {
+      "slug": "runtime-state-visualizer",
+      "default_repo_name": "runtime-state-visualizer",
+      "title": "AegisLayer Runtime State Visualizer",
+      "emoji": "🔄",
+      "colorFrom": "green",
+      "colorTo": "gray",
+      "short_description": "Static runtime-state explorer for approval pauses, execution, revocation, containment, and completion transitions.",
+      "pinned": false,
+      "tags": ["runtime-security", "human-in-the-loop", "auditability", "autonomous-agents", "zero-trust"],
+      "hero_eyebrow": "Runtime States",
+      "hero_title": "Follow deterministic request state transitions end to end",
+      "hero_summary": "Step through request creation, review, approval, execution, revocation, containment, and completion states with explanatory summaries.",
+      "disclaimer": "Runtime state transitions here are conceptual reference flows, not live telemetry or execution traces.",
+      "sections": [
+        {
+          "heading": "State Timeline",
+          "body": "Navigate bounded transitions, observe approval pause and revocation branches, and inspect the expected evidence for each state.",
+          "type": "runtime-states"
+        }
+      ]
+    },
+    {
+      "slug": "governance-library",
+      "default_repo_name": "governance-library",
+      "title": "AegisLayer Governance Library",
+      "emoji": "📚",
+      "colorFrom": "orange",
+      "colorTo": "green",
+      "short_description": "Searchable public index for ADRs, RFCs, glossary terms, patterns, governance references, and release materials.",
+      "pinned": false,
+      "tags": ["governance", "responsible-ai", "trustworthy-ai", "auditability", "explainability"],
+      "hero_eyebrow": "Governance Library",
+      "hero_title": "Navigate the AegisLayer public corpus without duplicating every document",
+      "hero_summary": "Browse curated pointers into ADRs, RFCs, patterns, glossary terms, release notes, and architecture guides.",
+      "disclaimer": "This Space is an index into canonical repository content and public documentation pages, not an independent fork of the corpus.",
+      "sections": [
+        {
+          "heading": "Library Index",
+          "body": "Search deterministic excerpts and jump to canonical GitHub Pages or source Markdown for the full reference content.",
+          "type": "governance-library"
+        }
+      ]
+    }
+  ]
+}

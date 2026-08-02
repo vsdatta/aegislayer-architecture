@@ -1,0 +1,9 @@
+scenario_id,scenario_name,risk_level,request_action,decision,reason,approval_state,connector_state,evidence_status,notes
+GS-001,low-risk allow,low,read_report,allow,policy_and_authority_match,not_required,ready,complete,Low-risk read action completes with bounded evidence.
+GS-002,unauthorized deny,medium,delete_resource,deny,authority_scope_mismatch,not_reached,not_evaluated,complete,Execution denied before connector usage.
+GS-003,high-impact approval required,high,rotate_secret,conditional,high_impact_requires_approval,required,ready,partial,Approval request created before execution can proceed.
+GS-004,connector unavailable,medium,sync_inventory,deny,connector_not_ready,not_reached,blocked,complete,Connector readiness failure causes fail-closed denial.
+GS-005,capability expired,high,deploy_change,revoke,capability_expired,granted_then_expired,ready,complete,Short-lived capability expires during runtime.
+GS-006,capability revoked,medium,publish_content,revoke,continuous_verification_revocation,not_required,ready,complete,Trust drift triggers capability revocation.
+GS-007,evidence incomplete,high,approve_budget,escalate,evidence_incomplete,held,ready,incomplete,Action remains blocked pending missing evidence.
+GS-008,containment triggered,high,execute_runbook,contain,incident_containment_triggered,review_required,degraded,complete,Containment event pauses recovery until review.

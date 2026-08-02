@@ -21,6 +21,7 @@ Public reference architecture, governance documentation, conceptual SDK, and int
 - Interactive demo: [interactive-demo/](interactive-demo/)
 - Research program: [research/](research/)
 - Hugging Face package: [huggingface/](huggingface/)
+- Hugging Face promotion program: [promotion/](promotion/)
 - Website integration artifacts: [website-integration/](website-integration/)
 
 ## Interactive Demo
@@ -37,6 +38,7 @@ This repository publishes conceptual and educational architecture material. It d
 - GitHub: canonical architecture and source
 - GitHub Pages: official technical documentation
 - Hugging Face: public discovery and static demo mirror
+- Hugging Face portfolio: reproducible Static Spaces, synthetic datasets, and collection packages generated from this repo
 - aegislayer.ai: organizational and product-facing presence
 
 ## Contribution and Security

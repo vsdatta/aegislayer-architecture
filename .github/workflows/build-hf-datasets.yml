@@ -1,0 +1,33 @@
+name: Build Hugging Face Datasets
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build-datasets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build datasets
+        run: |
+          python scripts/validate_hf_datasets.py
+          python scripts/build_hf_datasets.py
+
+      - name: Upload dataset artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: huggingface-datasets
+          path: dist/huggingface/datasets

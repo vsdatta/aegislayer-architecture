@@ -13,6 +13,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
+      HF_ORG: ${{ vars.HF_ORG }}
       HF_SPACE_REPO: ${{ vars.HF_SPACE_REPO }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
     steps:
@@ -35,34 +36,7 @@ jobs:
       - name: Build and validate HF package
         run: |
           python scripts/build_hf_space.py
-          python scripts/validate_demo.py
+          python scripts/validate_hf_assets.py
 
-      - name: Publish to Hugging Face Space repository
-        shell: bash
-        run: |
-          set -euo pipefail
-          tmpdir="$(mktemp -d)"
-          remote="https://user:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE_REPO}"
-
-          git clone "$remote" "$tmpdir"
-          find "$tmpdir" -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-
-          cp -R huggingface/hf_space/. "$tmpdir/"
-
-          if [ ! -f "$tmpdir/index.html" ]; then
-            echo "index.html missing in publication directory"
-            exit 1
-          fi
-
-          cd "$tmpdir"
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add --all
-
-          if git diff --cached --quiet; then
-            echo "No Hugging Face publication changes detected."
-            exit 0
-          fi
-
-          git commit -m "Publish static Space artifacts from canonical GitHub repo"
-          git push origin HEAD:main
+      - name: Publish preserved legacy Space
+        run: python scripts/publish_hf_portfolio.py --space organization-home

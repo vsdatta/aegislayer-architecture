@@ -1,53 +1,37 @@
 #!/usr/bin/env python3
-"""Build and validate Hugging Face static publication directory."""
+"""Build and validate the legacy Hugging Face publication directory."""
 
 from pathlib import Path
-import shutil
 import sys
 
+from build_hf_portfolio import DIST_ROOT, LEGACY_EXPORT, main as build_portfolio_main
+
 REPO = Path(__file__).resolve().parents[1]
-SOURCE = REPO / "interactive-demo"
-TARGET = REPO / "huggingface" / "hf_space"
+TARGET = LEGACY_EXPORT
 REQUIRED = ["index.html", "assets/css/styles.css", "assets/js/app.js", "README.md"]
 
 
 def main() -> int:
-    if not SOURCE.exists():
-        print("interactive-demo directory missing")
-        return 1
+    saved_argv = sys.argv[:]
+    try:
+        sys.argv = [saved_argv[0], "--space", "organization-home"]
+        build_result = build_portfolio_main()
+    finally:
+        sys.argv = saved_argv
 
-    if TARGET.exists():
-        shutil.rmtree(TARGET)
-    shutil.copytree(SOURCE, TARGET)
-
-    template = TARGET / "SPACE_README_TEMPLATE.md"
-    if template.exists():
-        template.unlink()
-
-    readme = TARGET / "README.md"
-    readme.write_text(
-        """---
-title: AegisLayer Interactive Demo
-emoji: 🛡️
-colorFrom: green
-colorTo: yellow
-sdk: static
-pinned: false
-license: apache-2.0
----
-
-## AegisLayer Interactive Demo
-
-Exported from canonical GitHub repository: [vsdatta/aegislayer-architecture](https://github.com/vsdatta/aegislayer-architecture)
-""",
-        encoding="utf-8",
-    )
+    if build_result != 0:
+        return build_result
 
     missing = [name for name in REQUIRED if not (TARGET / name).exists()]
     if missing:
         print("HF export missing required files:")
         for name in missing:
             print(f"- {name}")
+        return 1
+
+    dist_target = DIST_ROOT / "organization-home"
+    if not dist_target.exists():
+        print("organization-home dist export missing")
         return 1
 
     print("HF static package ready.")

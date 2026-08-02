@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" role="img" aria-labelledby="title desc">
+  <title id="title">AegisLayer Space Banner</title>
+  <desc id="desc">Original banner for static Spaces using layered cards and a shield grid.</desc>
+  <rect width="1600" height="400" fill="#f4f5ef"/>
+  <rect x="0" y="0" width="1600" height="180" fill="#184f39"/>
+  <rect x="0" y="180" width="1600" height="220" fill="#ecefe7"/>
+  <rect x="970" y="72" width="490" height="252" rx="30" fill="#ffffff" stroke="#ccd4c9"/>
+  <rect x="1010" y="116" width="180" height="24" rx="12" fill="#dfe9e2"/>
+  <rect x="1010" y="160" width="360" height="18" rx="9" fill="#e7ebe5"/>
+  <rect x="1010" y="192" width="320" height="18" rx="9" fill="#e7ebe5"/>
+  <rect x="1010" y="236" width="120" height="42" rx="21" fill="#194f39"/>
+  <path d="M170 66 284 112v78c0 73-44 118-114 154-70-36-114-81-114-154v-78z" fill="#8b6429"/>
+  <path d="M170 108 228 132v52c0 42-24 68-58 88-34-20-58-46-58-88v-52z" fill="none" stroke="#f7f3ea" stroke-width="8"/>
+  <text x="360" y="144" fill="#f7fbf7" font-size="28" font-family="Avenir Next, Segoe UI, sans-serif" letter-spacing="4">AEGISLAYER STATIC SPACES</text>
+  <text x="360" y="214" fill="#1a231e" font-size="74" font-family="Iowan Old Style, Georgia, serif">Deterministic walkthroughs, not live control planes</text>
+  <text x="360" y="278" fill="#506058" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif">Cross-linked architecture, policy, runtime, evidence, and threat-control explainers</text>
+</svg>

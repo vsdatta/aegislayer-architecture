@@ -1,0 +1,26 @@
+{
+  "title": "AegisLayer Architecture Catalog",
+  "type": "object",
+  "required": [
+    "layer_id",
+    "architecture_layer",
+    "purpose",
+    "inputs",
+    "outputs",
+    "trust_boundary",
+    "evidence_generated",
+    "related_diagram",
+    "related_documentation"
+  ],
+  "properties": {
+    "layer_id": {"type": "string"},
+    "architecture_layer": {"type": "string"},
+    "purpose": {"type": "string"},
+    "inputs": {"type": "string"},
+    "outputs": {"type": "string"},
+    "trust_boundary": {"type": "string"},
+    "evidence_generated": {"type": "string"},
+    "related_diagram": {"type": "string"},
+    "related_documentation": {"type": "string"}
+  }
+}

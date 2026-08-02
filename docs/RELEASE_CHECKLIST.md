@@ -34,6 +34,12 @@ Use this checklist before creating a stable release tag.
 
 - [ ] GitHub Pages artifact generated.
 - [ ] Hugging Face publication package validated.
+- [ ] Organization card and profile copy reviewed.
+- [ ] Space metadata and tagging reviewed.
+- [ ] Dataset packages and schemas validated.
+- [ ] Collection package updated.
+- [ ] Owner-only launch instructions reviewed.
+- [ ] Website and profile links verified.
 - [ ] Required secrets and variables are configured.
 - [ ] No generated output committed unintentionally.
 

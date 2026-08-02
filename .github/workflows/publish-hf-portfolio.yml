@@ -1,0 +1,64 @@
+name: Publish Hugging Face Portfolio
+
+on:
+  workflow_dispatch:
+    inputs:
+      space_slug:
+        description: "Optional single space slug to publish"
+        required: false
+      dry_run:
+        description: "Build and validate only, do not push"
+        required: false
+        default: "true"
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      HF_ORG: ${{ vars.HF_ORG }}
+      HF_SPACE_REPO: ${{ vars.HF_SPACE_REPO }}
+      HF_SPACE_MANIFEST: ${{ vars.HF_SPACE_MANIFEST }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate required configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          dry_run_input="${{ github.event.inputs.dry_run }}"
+          if [ -z "${HF_ORG:-}" ] && [ -z "${HF_SPACE_REPO:-}" ]; then
+            echo "HF_ORG or legacy HF_SPACE_REPO must be configured."
+            exit 1
+          fi
+          if [ "${dry_run_input:-false}" != "true" ] && [ -z "${HF_TOKEN:-}" ]; then
+            echo "HF_TOKEN secret is required for publication."
+            exit 1
+          fi
+
+      - name: Build portfolio and validate assets
+        run: |
+          python scripts/build_hf_portfolio.py
+          python scripts/validate_hf_assets.py
+
+      - name: Publish or dry run
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=()
+          space_slug_input="${{ github.event.inputs.space_slug }}"
+          dry_run_input="${{ github.event.inputs.dry_run }}"
+          if [ -n "${space_slug_input:-}" ]; then
+            args+=(--space "${space_slug_input}")
+          fi
+          if [ "${dry_run_input:-false}" = "true" ] && [ "${GITHUB_REF_TYPE}" != "tag" ]; then
+            args+=(--dry-run)
+          fi
+          python scripts/publish_hf_portfolio.py "${args[@]}"

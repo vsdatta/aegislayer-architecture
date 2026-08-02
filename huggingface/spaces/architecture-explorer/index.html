@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AegisLayer Architecture Explorer</title>
+    <meta name="description" content="Interactive map of architecture layers, trust boundaries, lifecycle artifacts, and linked documentation.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body data-space="architecture-explorer">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="hero">
+      <div class="hero-backdrop"></div>
+      <div class="hero-inner">
+        <p class="eyebrow">Architecture Explorer</p>
+        <h1>Trace the architecture from trust boundary to runtime outcome</h1>
+        <p class="lede">Browse layers, lifecycles, diagrams, and documentation links with deterministic examples and no external execution.</p>
+        <p class="disclaimer">This Space visualizes public reference content only. It does not introspect a live environment or validate production deployments.</p>
+        <div class="action-row"><a class="button primary" href="https://vsdatta.github.io/aegislayer-architecture/">Read the documentation</a>
+<a class="button secondary" href="https://github.com/vsdatta/aegislayer-architecture/tree/main/reference-sdk">Explore the SDK</a>
+<a class="button secondary" href="https://vsdatta.github.io/aegislayer-architecture/RESEARCH_PROGRAM/">View research</a>
+<a class="button ghost" href="https://github.com/vsdatta/aegislayer-architecture/blob/main/CONTRIBUTING.md">Contribute</a>
+<a class="button ghost" href="https://github.com/vsdatta/aegislayer-architecture/blob/main/SECURITY.md">Report a security issue</a></div>
+      </div>
+    </header>
+
+    <div class="page-shell">
+      <aside class="panel sidebar" aria-label="Portfolio navigation">
+        <h2>Portfolio</h2>
+        <nav>
+          <ul class="space-nav"><li><a href="https://huggingface.co/spaces/AEGISLAYER/organization-home">AegisLayer Organization Home</a></li>
+<li><a href="https://huggingface.co/spaces/AEGISLAYER/architecture-explorer" aria-current="page">AegisLayer Architecture Explorer</a></li>
+<li><a href="https://huggingface.co/spaces/AEGISLAYER/policy-playground">AegisLayer Policy Playground</a></li>
+<li><a href="https://huggingface.co/spaces/AEGISLAYER/evidence-chain-explorer">AegisLayer Evidence Chain Explorer</a></li>
+<li><a href="https://huggingface.co/spaces/AEGISLAYER/threat-control-explorer">AegisLayer Threat Control Explorer</a></li>
+<li><a href="https://huggingface.co/spaces/AEGISLAYER/connector-trust-simulator">AegisLayer Connector Trust Simulator</a></li>
+<li><a href="https://huggingface.co/spaces/AEGISLAYER/runtime-state-visualizer">AegisLayer Runtime State Visualizer</a></li>
+<li><a href="https://huggingface.co/spaces/AEGISLAYER/governance-library">AegisLayer Governance Library</a></li></ul>
+        </nav>
+        <div class="sidebar-block">
+          <h3>Canonical Source</h3>
+          <a href="https://github.com/vsdatta/aegislayer-architecture">GitHub repository</a>
+          <a href="https://vsdatta.github.io/aegislayer-architecture/">GitHub Pages docs</a>
+          <a href="https://aegislayer.ai">AegisLayer website</a>
+        </div>
+      </aside>
+
+      <main id="content" class="content" tabindex="-1">
+        <section class="panel summary-panel">
+          <div class="summary-grid">
+            <article>
+              <h2>Developer</h2>
+              <p>VND TECH LLC</p>
+            </article>
+            <article>
+              <h2>Public Scope</h2>
+              <p>Conceptual reference architecture, governance documentation, diagrams, public research planning artifacts, synthetic datasets, static demonstrations, and a reference SDK.</p>
+            </article>
+            <article>
+              <h2>Principles</h2>
+              <ol><li>Separate AI reasoning from execution authority.</li><li>Validate identity and authority before authorization.</li><li>Evaluate policy before execution.</li><li>Require accountable approval for high-impact actions.</li><li>Scope connector access through explicit capabilities.</li><li>Generate evidence by design.</li><li>Continuously verify runtime trust and fail closed on drift.</li></ol>
+            </article>
+          </div>
+        </section>
+        <section class="panel section-panel"><div class="section-header"><h2>Architecture Layers</h2><p>Review identity, policy, approval, connector, runtime, evidence, and containment responsibilities as separate but linked control planes.</p></div><div class="section-body"><article class="data-card"><h3>Identity and Authority</h3><p>Verify who is requesting an action and what explicit authority they hold.</p><a href="https://vsdatta.github.io/aegislayer-architecture/IDENTITY_AUTHORITY_LIFECYCLE/">Read lifecycle</a></article><article class="data-card"><h3>Policy Evaluation</h3><p>Evaluate policy before execution and branch into deny, allow, conditional, or approval-required states.</p><a href="https://vsdatta.github.io/aegislayer-architecture/POLICY_EVALUATION_LIFECYCLE/">Read lifecycle</a></article><article class="data-card"><h3>Human Approval</h3><p>Bind high-impact actions to accountable human decisions with scope and expiry.</p><a href="https://vsdatta.github.io/aegislayer-architecture/APPROVAL_LIFECYCLE/">Read lifecycle</a></article><article class="data-card"><h3>Connector Trust</h3><p>Constrain execution to explicit capabilities and readiness-gated connectors.</p><a href="https://vsdatta.github.io/aegislayer-architecture/CONNECTOR_LIFECYCLE/">Read lifecycle</a></article><article class="data-card"><h3>Runtime and Evidence</h3><p>Track runtime state, produce evidence, and preserve auditability.</p><a href="https://vsdatta.github.io/aegislayer-architecture/RUNTIME_STATE_MODEL/">Read lifecycle</a></article><article class="data-card"><h3>Continuous Verification</h3><p>Re-evaluate trust during runtime and revoke on drift or anomaly.</p><a href="https://vsdatta.github.io/aegislayer-architecture/CONTINUOUS_VERIFICATION_LIFECYCLE/">Read lifecycle</a></article><article class="data-card"><h3>Containment and Recovery</h3><p>Fail closed, contain incidents, and require explicit recovery decisions.</p><a href="https://vsdatta.github.io/aegislayer-architecture/INCIDENT_CONTAINMENT_RECOVERY/">Read lifecycle</a></article></div></section>
+<section class="panel section-panel"><div class="section-header"><h2>Trust Boundaries</h2><p>Inspect where authority, execution, connectors, evidence, and recovery controls cross boundaries and where fail-closed behavior applies.</p></div><div class="section-body"><article class="data-card"><h3>Reasoning to Authority Boundary</h3><p>A model may propose an action, but authority remains outside the model and must be validated.</p><a href="https://vsdatta.github.io/aegislayer-architecture/TRUST_BOUNDARY_DEEP_DIVE/">Read boundary detail</a></article><article class="data-card"><h3>Policy to Execution Boundary</h3><p>Execution proceeds only after policy resolves the request into an explicit permitted state.</p><a href="https://vsdatta.github.io/aegislayer-architecture/POLICY_EVALUATION_LIFECYCLE/">Read boundary detail</a></article><article class="data-card"><h3>Connector to Runtime Boundary</h3><p>Connectors expose narrow capability scopes and fail closed when readiness degrades.</p><a href="https://vsdatta.github.io/aegislayer-architecture/CONNECTOR_LIFECYCLE/">Read boundary detail</a></article><article class="data-card"><h3>Runtime to Evidence Boundary</h3><p>Every material decision and state transition produces reviewable evidence.</p><a href="https://vsdatta.github.io/aegislayer-architecture/EVIDENCE_LIFECYCLE_DEEP_DIVE/">Read boundary detail</a></article></div></section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div>
+        <p>No analytics. No tracking. No external execution. No secrets required.</p>
+        <p>Live Space directory uses deterministic repository-owned content only.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/vsdatta/aegislayer-architecture/blob/main/CHANGELOG.md">Release notes</a>
+        <a href="https://vsdatta.github.io/aegislayer-architecture/GOVERNANCE/">Governance docs</a>
+        <a href="https://vsdatta.github.io/aegislayer-architecture/THREAT_MODEL/">Threat model</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

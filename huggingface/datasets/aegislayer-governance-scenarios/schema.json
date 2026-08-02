@@ -1,0 +1,28 @@
+{
+  "title": "AegisLayer Governance Scenarios",
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "scenario_name",
+    "risk_level",
+    "request_action",
+    "decision",
+    "reason",
+    "approval_state",
+    "connector_state",
+    "evidence_status",
+    "notes"
+  ],
+  "properties": {
+    "scenario_id": {"type": "string"},
+    "scenario_name": {"type": "string"},
+    "risk_level": {"type": "string"},
+    "request_action": {"type": "string"},
+    "decision": {"type": "string"},
+    "reason": {"type": "string"},
+    "approval_state": {"type": "string"},
+    "connector_state": {"type": "string"},
+    "evidence_status": {"type": "string"},
+    "notes": {"type": "string"}
+  }
+}

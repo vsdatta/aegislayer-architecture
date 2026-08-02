@@ -1,0 +1,112 @@
+{
+  "collections": [
+    {
+      "slug": "aegislayer-core",
+      "title": "AegisLayer Core",
+      "description": "Primary entry points for the public AegisLayer architecture program.",
+      "purpose": "Give first-time visitors a complete, accurate path through the organization-home Space, documentation, datasets, and SDK.",
+      "audience": "Platform architects, security leads, governance teams, and technical evaluators.",
+      "items": ["organization-home Space", "Reference Architecture Guide", "Governance Library Space", "reference-sdk", "aegislayer-governance-scenarios dataset"],
+      "canonical_links": ["https://github.com/vsdatta/aegislayer-architecture", "https://vsdatta.github.io/aegislayer-architecture/"],
+      "inclusion_criteria": "Only public canonical artifacts that explain the full AegisLayer scope.",
+      "exclusion_criteria": "No drafts without public context, no speculative external claims, no redundant mirrors.",
+      "update_process": "Refresh on releases, new Spaces, or major documentation expansions."
+    },
+    {
+      "slug": "ai-governance",
+      "title": "AI Governance",
+      "description": "Artifacts focused on policy, accountability, review, and lifecycle control.",
+      "purpose": "Help governance and assurance readers navigate policy-centric materials quickly.",
+      "audience": "Governance leads, policy engineers, compliance architects.",
+      "items": ["policy-playground Space", "Governance docs", "Approval Lifecycle docs", "AegisLayer Governance Scenarios dataset"],
+      "canonical_links": ["https://vsdatta.github.io/aegislayer-architecture/GOVERNANCE/"],
+      "inclusion_criteria": "Governance-relevant docs, datasets, and Spaces with explicit scope boundaries.",
+      "exclusion_criteria": "No generalized AI news posts or unrelated tooling.",
+      "update_process": "Refresh when governance docs, scenarios, or approval flows change."
+    },
+    {
+      "slug": "ai-security-and-zero-trust",
+      "title": "AI Security and Zero Trust",
+      "description": "Threat, control, runtime, and trust-boundary materials for secure AI execution patterns.",
+      "purpose": "Collect the security-relevant slice of the public corpus in one place.",
+      "audience": "Security engineers, threat modelers, zero-trust architects.",
+      "items": ["architecture-explorer Space", "threat-control-explorer Space", "Threat Model docs", "threat-control-map dataset"],
+      "canonical_links": ["https://vsdatta.github.io/aegislayer-architecture/THREAT_MODEL/"],
+      "inclusion_criteria": "Artifacts that explain secure execution boundaries and control rationale.",
+      "exclusion_criteria": "No speculative vulnerability claims or unverifiable incident examples.",
+      "update_process": "Refresh when threat mappings, security docs, or related Spaces change."
+    },
+    {
+      "slug": "agentic-ai-runtime-governance",
+      "title": "Agentic AI Runtime Governance",
+      "description": "Execution-state, connector, revocation, and containment materials for agentic systems.",
+      "purpose": "Show how runtime posture is governed after an action is proposed.",
+      "audience": "Runtime engineers, agent platform teams, operations architects.",
+      "items": ["runtime-state-visualizer Space", "connector-trust-simulator Space", "Continuous Verification docs", "Runtime State Model docs"],
+      "canonical_links": ["https://vsdatta.github.io/aegislayer-architecture/RUNTIME_STATE_MODEL/"],
+      "inclusion_criteria": "Artifacts that explain runtime transitions, connector trust, and fail-closed behavior.",
+      "exclusion_criteria": "No unrelated model-hosting or chatbot UX content.",
+      "update_process": "Refresh when runtime diagrams, connector material, or simulators change."
+    },
+    {
+      "slug": "evidence-and-auditability",
+      "title": "Evidence and Auditability",
+      "description": "Evidence-chain, traceability, and reviewability assets for accountable AI execution.",
+      "purpose": "Support teams that need to study how decisions become reviewable records.",
+      "audience": "Audit teams, assurance engineers, security review leads.",
+      "items": ["evidence-chain-explorer Space", "Evidence Lifecycle docs", "Threat-to-Control Traceability docs"],
+      "canonical_links": ["https://vsdatta.github.io/aegislayer-architecture/EVIDENCE_LIFECYCLE_DEEP_DIVE/"],
+      "inclusion_criteria": "Artifacts that explain evidence record creation, correlation, causation, and review.",
+      "exclusion_criteria": "No unverifiable claims about tamper-proof guarantees outside documented scope.",
+      "update_process": "Refresh when evidence docs or related Spaces change."
+    },
+    {
+      "slug": "human-approval-and-accountability",
+      "title": "Human Approval and Accountability",
+      "description": "Approval-path materials for high-impact actions and accountable human review.",
+      "purpose": "Provide a direct route into approval lifecycle content and related scenarios.",
+      "audience": "Risk owners, governance leads, operators, human-review program designers.",
+      "items": ["policy-playground Space", "Approval Lifecycle docs", "Governance docs"],
+      "canonical_links": ["https://vsdatta.github.io/aegislayer-architecture/APPROVAL_LIFECYCLE/"],
+      "inclusion_criteria": "Artifacts with direct approval or accountability content.",
+      "exclusion_criteria": "No unrelated general AI ethics content without execution-governance relevance.",
+      "update_process": "Refresh when approval flows, governance wording, or approval scenarios change."
+    },
+    {
+      "slug": "threat-models-and-control-mapping",
+      "title": "Threat Models and Control Mapping",
+      "description": "Public threat-model and control-traceability resources with dataset support.",
+      "purpose": "Bundle the threat-centric material for readers comparing architecture to risk surfaces.",
+      "audience": "Threat modelers, architects, control owners.",
+      "items": ["threat-control-explorer Space", "Threat Model docs", "Control Mapping docs", "threat-control-map dataset"],
+      "canonical_links": ["https://vsdatta.github.io/aegislayer-architecture/CONTROL_MAPPING/"],
+      "inclusion_criteria": "Threat and control artifacts grounded in published docs or datasets.",
+      "exclusion_criteria": "No penetration-test claims, no external vuln disclosure material.",
+      "update_process": "Refresh when docs or mappings change."
+    },
+    {
+      "slug": "reference-sdk-and-developer-resources",
+      "title": "Reference SDK and Developer Resources",
+      "description": "Reference SDK, examples, and developer-facing public materials.",
+      "purpose": "Give implementers a single path into SDK and technical reference materials.",
+      "audience": "Developers, SDK evaluators, solution engineers.",
+      "items": ["reference-sdk", "Reference SDK docs", "Architecture Explorer Space", "architecture-catalog dataset"],
+      "canonical_links": ["https://github.com/vsdatta/aegislayer-architecture/tree/main/reference-sdk"],
+      "inclusion_criteria": "Public implementation guidance and conceptual code examples only.",
+      "exclusion_criteria": "No hidden APIs, no private runtimes, no product-only features.",
+      "update_process": "Refresh when the SDK or implementation guidance changes."
+    },
+    {
+      "slug": "research-and-whitepapers",
+      "title": "Research and Whitepapers",
+      "description": "Research program artifacts and long-form public thought pieces tied to the architecture scope.",
+      "purpose": "Curate the exploratory and whitepaper-oriented side of the program.",
+      "audience": "Researchers, technical writers, partner evaluators, interested practitioners.",
+      "items": ["Research Program docs", "organization-home Space", "Governance Library Space"],
+      "canonical_links": ["https://vsdatta.github.io/aegislayer-architecture/RESEARCH_PROGRAM/"],
+      "inclusion_criteria": "Public research planning or whitepaper-style artifacts grounded in repository references.",
+      "exclusion_criteria": "No fabricated benchmarks, endorsements, or adoption claims.",
+      "update_process": "Refresh when research scope, notes, or long-form public artifacts change."
+    }
+  ]
+}

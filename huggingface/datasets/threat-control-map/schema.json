@@ -1,0 +1,22 @@
+{
+  "title": "AegisLayer Threat Control Map",
+  "type": "object",
+  "required": [
+    "threat_id",
+    "threat_family",
+    "affected_asset",
+    "control_principle",
+    "related_adr",
+    "documentation_link",
+    "residual_risk_statement"
+  ],
+  "properties": {
+    "threat_id": {"type": "string"},
+    "threat_family": {"type": "string"},
+    "affected_asset": {"type": "string"},
+    "control_principle": {"type": "string"},
+    "related_adr": {"type": "string"},
+    "documentation_link": {"type": "string"},
+    "residual_risk_statement": {"type": "string"}
+  }
+}

@@ -1,0 +1,85 @@
+name: Validate Hugging Face Assets
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python tooling
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install mkdocs mkdocs-material pymdown-extensions ruff mypy pytest
+
+      - name: Build spaces and datasets
+        run: |
+          python scripts/build_hf_portfolio.py
+          python scripts/build_hf_datasets.py
+
+      - name: Validate Markdown
+        run: npx --yes markdownlint-cli2@0.16.0 "**/*.md" "#site/**" "#.venv/**" "#.venv-1/**" "#dist/**"
+
+      - name: Validate relative links
+        run: python scripts/check_relative_links.py
+
+      - name: Validate external links
+        run: python scripts/validate_external_links.py
+
+      - name: Build MkDocs strictly
+        run: mkdocs build --strict
+
+      - name: Validate Mermaid diagrams
+        run: python scripts/validate_mermaid.py
+
+      - name: Validate reference SDK
+        run: |
+          cd reference-sdk
+          python -m pip install -e .[dev]
+          ruff check src tests
+          mypy src
+          pytest -q
+
+      - name: Validate HTML
+        run: npx --yes html-validate@latest "huggingface/spaces/**/*.html" "interactive-demo/**/*.html"
+
+      - name: Validate CSS
+        run: npx --yes stylelint@latest "huggingface/spaces/**/*.css" "interactive-demo/**/*.css"
+
+      - name: Validate JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r file; do
+            node --check "$file"
+          done < <(find huggingface/spaces interactive-demo -name '*.js' | sort)
+
+      - name: Validate Hugging Face assets
+        run: python scripts/validate_hf_assets.py
+
+      - name: Validate datasets
+        run: python scripts/validate_hf_datasets.py
+
+      - name: Validate interactive demo
+        run: python scripts/validate_demo.py
+
+      - name: Secret-pattern scan
+        run: python scripts/scan_secrets.py
+
+      - name: Validate workflows
+        run: docker run --rm -v "$PWD:/repo" -w /repo rhysd/actionlint:latest
