@@ -1,22 +1,18 @@
 # Security Design Principles
 
-## Purpose
+## Core Principles
 
-This document summarizes the conceptual security principles reflected throughout the AegisLayer reference architecture.
+1. Separate AI reasoning from execution authority.
+2. Validate identity and authority before policy allow.
+3. Evaluate policy before external execution.
+4. Enforce least privilege through scoped capabilities.
+5. Require accountable approvals for high-impact actions.
+6. Generate attributable evidence by design.
+7. Continuously verify trust conditions during execution.
+8. Fail closed on uncertainty.
+9. Preserve containment and recovery controls.
+10. Publish external artifacts with fail-closed release checks.
 
-## Principles
+## Claims Boundary
 
-1. Governance before execution.
-2. Never grant implicit authority.
-3. Verify identity before authorization.
-4. Apply least privilege through capability scoping.
-5. Prefer fail-closed behavior when trust cannot be established.
-6. Generate evidence across the request lifecycle.
-7. Continuously verify trust conditions.
-8. Require accountable human approval for high-impact actions.
-9. Preserve traceability through correlation and audit.
-10. Treat external systems and connector outputs as untrusted until validated.
-
-## Relationship to Repository Content
-
-These principles are elaborated by the ADR library, threat model, governance documentation, architecture diagrams, control mapping, and pattern library. They are intended to provide a concise reference rather than replace those documents.
+These principles support risk reduction and governance confidence. They are not claims of universal threat prevention.

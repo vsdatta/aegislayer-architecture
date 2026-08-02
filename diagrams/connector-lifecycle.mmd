@@ -1,0 +1,9 @@
+stateDiagram-v2
+    [*] --> Discovered
+    Discovered --> Ready: health and trust checks pass
+    Discovered --> Blocked: checks fail
+    Ready --> Executing: scoped capability validated
+    Executing --> Ready: complete
+    Ready --> Revoked: trust drift detected
+    Blocked --> [*]
+    Revoked --> [*]

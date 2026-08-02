@@ -1,69 +1,131 @@
 # Contributing to AegisLayer Architecture
 
-Thank you for your interest in contributing.
+Thank you for contributing to AegisLayer.
 
 ## Scope
 
-This repository focuses on public architecture, threat modeling, governance, security research, reference designs, and educational material related to secure and governable AI systems.
+This repository is the canonical public source for the AegisLayer reference architecture, governance model, diagram library, conceptual SDK artifacts, and public research outputs.
 
-Contributions should be clear, technically grounded, non-confidential, and appropriate for public release.
+Contributions must remain public-safe, technically grounded, and aligned to accepted ADRs.
 
-## Before You Contribute
+## Public-Release Boundaries
 
-Please do not submit:
+Do not submit:
 
 - Secrets, credentials, private keys, or access tokens
 - Customer or personal data
-- Proprietary implementation details
-- Patent-sensitive material not approved for publication
-- Security vulnerabilities through public issues
-- Claims that cannot be supported by evidence
+- Confidential infrastructure details
+- Proprietary production implementation logic
+- Unapproved patent-sensitive implementation details
+- Public vulnerability disclosures (report privately through [SECURITY.md](SECURITY.md))
 
-Security concerns must be reported privately as described in `SECURITY.md`.
+## Branch and Change Model
 
-## Contribution Process
+- `main` is the stable public specification branch.
+- Use short-lived feature branches for non-trivial changes.
+- Keep pull requests narrow and traceable.
+- Material architecture changes must start with an RFC.
+- Accepted architecture changes must create or update ADRs.
 
-1. Open an issue describing the proposed change.
-2. Keep the scope focused.
-3. Use clear Markdown and descriptive headings.
-4. Distinguish implemented capabilities from research goals or planned work.
-5. Avoid absolute security claims such as “unhackable” or “100% secure.”
-6. Submit a pull request with a concise summary and rationale.
+## Architecture Change Workflow
 
-## Documentation Standards
+Use this lifecycle for any material architecture or governance change:
 
-Contributions should:
+1. Open or update an issue describing scope and impact.
+2. Author an RFC in [docs/rfc](docs/rfc).
+3. Complete technical, security, and governance review.
+4. Record accepted architecture decisions in [docs/adr](docs/adr).
+5. Synchronize affected artifacts:
+   - Architecture and governance docs
+   - Threat model and control mapping
+   - Pattern library and examples
+   - Mermaid diagrams
+   - Glossary terms
+   - Changelog and release notes
+6. Validate quality gates locally and in CI.
 
-- Use plain, precise language
-- Define specialized terms
-- Separate fact, inference, design intent, and future work
-- Include references where external claims are made
-- Preserve consistency with the repository’s security and governance principles
-- Avoid unnecessary marketing language
+## ADR and RFC Status Governance
 
-## Commit Messages
+### ADR statuses
 
-Use short, descriptive commit messages, for example:
+- **Accepted**: authoritative decision.
+- **Superseded**: replaced by a newer accepted ADR.
+- **Deprecated**: retained historically but no longer recommended.
+- **Rejected**: considered but not adopted.
 
-- `Clarify runtime policy boundary`
-- `Add prompt injection threat scenario`
-- `Document evidence chain assumptions`
+### RFC statuses
 
-## Review Criteria
+- **Draft**: proposal being authored.
+- **Review**: under structured review.
+- **Accepted**: approved for implementation.
+- **Rejected**: not approved.
+- **Withdrawn**: removed by author.
+- **Superseded**: replaced by a newer RFC.
+- **Implemented**: accepted work completed and verified.
 
-A contribution may be reviewed for:
+## Release Governance
 
-- Technical accuracy
-- Security implications
+Documentation releases use Semantic Versioning suitable for reference artifacts:
+
+- **MAJOR** (`X.0.0`): material architecture/governance model shifts, breaking interpretation changes.
+- **MINOR** (`1.X.0`): new additive architecture pages, examples, SDK/demo capabilities, or research sections.
+- **PATCH** (`1.0.X`): editorial clarifications, link fixes, non-material corrections.
+
+Release controls:
+
+1. Update `release/VERSION.json`.
+2. Update [CHANGELOG.md](CHANGELOG.md) and release notes.
+3. Run full validation gates.
+4. Obtain owner review and public-release review.
+5. Publish only after validations pass.
+
+## Contributor Commands
+
+### Documentation
+
+- `mkdocs build --strict`
+- `python scripts/validate_mermaid.py`
+
+### Reference SDK
+
+- `cd reference-sdk && python -m pip install -e .[dev]`
+- `cd reference-sdk && ruff check src tests`
+- `cd reference-sdk && mypy src`
+- `cd reference-sdk && pytest -q`
+
+### Interactive Demo
+
+- `python scripts/validate_demo.py`
+
+### Security and Link Hygiene
+
+- `python scripts/scan_secrets.py`
+- `python scripts/check_relative_links.py`
+
+## Pull Request Expectations
+
+A pull request should clearly identify:
+
+- What changed and why
+- ADR/RFC impact
+- Security and governance implications
+- Validation performed
 - Public-release suitability
-- Clarity and consistency
-- Intellectual-property risk
-- Alignment with project scope
 
-Submission does not guarantee acceptance.
+Use [Architecture Review Checklist](docs/ARCHITECTURE_REVIEW_CHECKLIST.md) for material changes.
+
+## Review and Ownership
+
+Owner review is required for:
+
+- ADR acceptance/supersession/deprecation
+- RFC acceptance/rejection
+- Release governance changes
+- Security policy changes
+- Publication workflow changes
 
 ## License
 
-By contributing, you agree that your contribution may be distributed under the repository’s applicable license.
+By contributing, you agree your contribution may be distributed under the repository license.
 
 Copyright © VND TECH LLC.

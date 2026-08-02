@@ -1,0 +1,19 @@
+stateDiagram-v2
+    [*] --> received
+    received --> identity_validated
+    identity_validated --> policy_evaluated
+    policy_evaluated --> awaiting_approval: approval required
+    policy_evaluated --> capability_issued: allowed
+    awaiting_approval --> capability_issued: approved
+    capability_issued --> executing
+    executing --> completed: success with finalized evidence
+    executing --> contained: trust drift or incident
+    state executing {
+      [*] --> active
+      active --> active: monitor and re-verify
+    }
+    received --> denied
+    identity_validated --> denied
+    policy_evaluated --> denied
+    awaiting_approval --> denied: expired or denied
+    contained --> denied

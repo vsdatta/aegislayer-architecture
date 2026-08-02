@@ -1,75 +1,55 @@
 # Reference Examples
 
-This document provides conceptual examples showing how the public AegisLayer governance patterns work together. These examples are illustrative only and intentionally omit implementation details.
+These conceptual examples map architecture behavior to the reference SDK and interactive demo.
 
-## Example 1: Governed AI Request
+## Example 1: Allowed Low-Risk Request
 
-1. User submits a request.
-2. Identity and authority are validated.
-3. Policy and risk are evaluated.
-4. Approval is requested if required.
-5. A scoped capability is issued.
-6. Execution occurs in a controlled runtime.
-7. Evidence and telemetry are recorded.
-8. Results are returned and the request is finalized.
+- Identity and authority validate
+- Policy returns allow
+- Connector readiness is ready
+- Runtime completes with evidence
 
-Expected governance outcome:
+## Example 2: Denied Unauthorized Request
 
-- Execution proceeds only when trust conditions are satisfied.
-- Evidence is sufficient for independent review.
+- Identity validates
+- Authority scope mismatch triggers deny
+- Runtime fails closed before external execution
 
-## Example 2: Connector Health Failure
+## Example 3: High-Impact Request Requiring Approval
 
-1. Connector selected.
-2. Health verification fails.
-3. Execution does not proceed.
-4. Evidence records the denial.
-5. Alternative routing or escalation is considered according to policy.
+- Policy returns require approval
+- Approval is validated for scope/expiry
+- Execution proceeds only while approval remains valid
 
-Expected governance outcome:
+## Example 4: Connector Readiness Failure
 
-- Connector unreadiness fails closed.
-- No implicit fallback broadens privileges.
+- Connector readiness is blocked
+- Runtime denies without privilege broadening
 
-## Example 3: High-Impact Operation
+## Example 5: Capability Expiry During Execution
 
-1. Action exceeds governance threshold.
-2. Human approval is required.
-3. Approval is bound to scope and expiry.
-4. Execution proceeds only after approval.
-5. All actions are correlated with evidence.
+- Capability expires
+- Continuous verification revokes capability
+- Runtime transitions to contained/denied path
 
-Expected governance outcome:
+## Example 6: Continuous Verification Revocation
 
-- Approval remains request-specific, time-bound, and attributable.
-- Expired or mismatched approval blocks execution.
+- Trust drift detected
+- Capability revoked with explicit reason
+- Monitoring event recorded
 
-## Example 4: Continuous Verification
+## Example 7: Evidence Bundle Generation
 
-1. Long-running workflow begins.
-2. Monitoring detects approval expiry.
-3. Capability is revoked.
-4. Runtime pauses or stops execution.
-5. Incident and audit records are preserved.
+- Lifecycle events appended with correlation and causation IDs
+- Finalized evidence bundle becomes immutable
 
-Expected governance outcome:
+## Example 8: Incident Containment
 
-- Stale trust state triggers containment.
-- Recovery decisions are evidence-backed.
+- Anomaly detection triggers containment
+- Incident decision selects containment/recovery path
 
-## Example-to-Pattern Mapping
+## Reference Links
 
-| Example | Primary Pattern | Related ADRs |
-| --- | --- | --- |
-| Governed AI Request | Governed Request Flow | ADR-0001, ADR-0002, ADR-0003, ADR-0004 |
-| Connector Health Failure | Connector Invocation | ADR-0004, ADR-0005 |
-| High-Impact Operation | High-Impact Action | ADR-0007 |
-| Continuous Verification | Continuous Trust | ADR-0006 |
-
-## Related Documentation
-
-- [Governance](GOVERNANCE.md)
-- [Threat Model](THREAT_MODEL.md)
-- [Control Mapping](CONTROL_MAPPING.md)
-- [Pattern Library](PATTERN_LIBRARY.md)
-- [ADR Index](adr/README.md)
+- SDK examples: `reference-sdk/examples/scenarios.py`
+- SDK tests: `reference-sdk/tests/test_reference_sdk.py`
+- Demo scenarios: `interactive-demo/assets/js/app.js`

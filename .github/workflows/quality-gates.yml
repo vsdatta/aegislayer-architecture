@@ -1,0 +1,152 @@
+name: Quality Gates
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  markdown-and-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Markdown lint
+        uses: DavidAnson/markdownlint-cli2-action@v20
+        with:
+          globs: |
+            **/*.md
+            !.venv/**
+            !site/**
+            !node_modules/**
+            #node_modules
+      - name: Link validation
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --accept 200,206,429
+            --exclude-path node_modules
+            "**/*.md"
+          fail: true
+
+  docs-build-and-nav:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install docs dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install mkdocs-material pymdown-extensions
+      - name: MkDocs strict build
+        run: mkdocs build --strict
+      - name: Relative link audit
+        run: python scripts/check_relative_links.py
+      - name: Nav reachability audit
+        run: python scripts/check_nav_reachability.py
+
+  mermaid-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Baseline Mermaid checks
+        run: python scripts/validate_mermaid.py
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Mermaid parse validation
+        run: |
+          npm install @mermaid-js/parser
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          import { parse } from '@mermaid-js/parser';
+
+          const dir = path.join(process.cwd(), 'diagrams');
+          const files = fs.readdirSync(dir).filter((f) => f.endsWith('.mmd'));
+          let failed = false;
+          let parsed = 0;
+          let skipped = 0;
+
+          for (const file of files) {
+            const content = fs.readFileSync(path.join(dir, file), 'utf8');
+            try {
+              parse(content);
+              parsed += 1;
+            } catch (err) {
+              const message = String(err);
+              if (message.includes('Unknown diagram type')) {
+                console.warn(`Skipping unsupported Mermaid type for parser: ${file}`);
+                skipped += 1;
+                continue;
+              }
+              failed = true;
+              console.error(`Mermaid parse failed: ${file}`);
+              console.error(message);
+            }
+          }
+
+          if (failed) process.exit(1);
+          console.log(`Mermaid parse validation complete. parsed=${parsed}, skipped=${skipped}, total=${files.length}`);
+          NODE
+
+  sdk-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install SDK dependencies
+        run: |
+          python -m pip install --upgrade pip
+          cd reference-sdk
+          python -m pip install -e .[dev]
+      - name: Ruff
+        run: cd reference-sdk && ruff check src tests
+      - name: Mypy
+        run: cd reference-sdk && mypy src
+      - name: Pytest
+        run: cd reference-sdk && pytest -q
+
+  demo-and-security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate static demo
+        run: python scripts/validate_demo.py
+      - name: Secret-pattern scan
+        run: python scripts/scan_secrets.py
+
+  workflow-and-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Workflow syntax review
+        uses: rhysd/actionlint@v1
+      - name: Build release artifacts
+        run: |
+          mkdir -p dist
+          tar -czf dist/reference-sdk.tar.gz reference-sdk
+          tar -czf dist/interactive-demo.tar.gz interactive-demo
+          tar -czf dist/huggingface-package.tar.gz huggingface
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-artifacts
+          path: dist

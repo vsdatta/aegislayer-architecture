@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AegisLayer Interactive Demo</title>
+    <meta
+      name="description"
+      content="Interactive conceptual demonstrations for the AegisLayer public reference architecture."
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="hero" role="banner">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">AegisLayer Interactive Demo</p>
+        <h1>Governed AI Request Walkthroughs</h1>
+        <p>
+          Conceptual, deterministic simulations for identity, policy, approvals, capability scope,
+          connector trust, runtime transitions, evidence, monitoring, and containment.
+        </p>
+        <p class="disclaimer">
+          This static demo is illustrative only. It does not execute real external actions and does
+          not claim real-time production protection.
+        </p>
+      </div>
+    </header>
+
+    <main id="content" class="layout" tabindex="-1">
+      <aside class="panel nav-panel" aria-label="Demo navigation">
+        <h2>Scenarios</h2>
+        <nav>
+          <ul id="scenario-list"></ul>
+        </nav>
+      </aside>
+
+      <section class="panel content-panel" aria-live="polite">
+        <h2 id="scenario-title">Select a scenario</h2>
+        <p id="scenario-summary"></p>
+        <div class="badge-row" id="scenario-tags"></div>
+        <ol id="scenario-steps"></ol>
+        <h3>Decision Snapshot</h3>
+        <pre id="scenario-output" class="code-block"></pre>
+      </section>
+
+      <section class="panel explorer-panel">
+        <h2>Architecture Diagram Explorer</h2>
+        <label for="diagram-select">Diagram</label>
+        <select id="diagram-select"></select>
+        <p id="diagram-desc"></p>
+        <a id="diagram-link" href="#" target="_blank" rel="noopener">Open source diagram</a>
+
+        <h3>Threat-to-Control Explorer</h3>
+        <label for="threat-select">Threat Theme</label>
+        <select id="threat-select"></select>
+        <div id="threat-output" class="callout"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Canonical source: <a href="https://github.com/vsdatta/aegislayer-architecture">GitHub repository</a>
+      </p>
+      <p>
+        Official technical docs: <a href="https://vsdatta.github.io/aegislayer-architecture/">GitHub Pages</a>
+      </p>
+      <p>No analytics. No tracking pixels. No user data collection.</p>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

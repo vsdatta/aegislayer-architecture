@@ -6,51 +6,57 @@ Describe the purpose of this change and the problem it addresses.
 
 - [ ] Documentation correction
 - [ ] Architecture clarification
-- [ ] Threat-model update
 - [ ] Governance update
-- [ ] Diagram or visual update
-- [ ] Repository automation
+- [ ] Threat-model update
+- [ ] Diagram update
+- [ ] Reference SDK change
+- [ ] Interactive demo change
+- [ ] Research program change
+- [ ] CI/automation change
+- [ ] Release process change
 - [ ] Other
 
 ## Scope
 
-List the files or sections changed.
+List changed files/directories.
 
-## Evidence and Rationale
+## ADR/RFC Impact
 
-Explain the technical basis for the change. Distinguish clearly between:
+- [ ] Material architecture change starts with an RFC.
+- [ ] Accepted architecture impact created/updated ADR where required.
+- [ ] ADR/RFC status updates are synchronized.
 
-- Existing repository content
-- External references
-- Design proposal
-- Future work
+## Required Synchronization Checks
 
-## Security and Governance Review
+- [ ] Diagrams updated (or not impacted)
+- [ ] Threat model updated (or not impacted)
+- [ ] Control mapping updated (or not impacted)
+- [ ] Pattern library updated (or not impacted)
+- [ ] Reference examples updated (or not impacted)
+- [ ] Changelog and release notes updated (or not impacted)
 
-- [ ] No credentials, secrets, customer data, or private infrastructure details are included.
-- [ ] No unapproved proprietary or patent-sensitive implementation details are included.
-- [ ] Security claims are evidence-based and avoid absolute guarantees.
-- [ ] The change preserves fail-closed and least-privilege principles where applicable.
-- [ ] Any security vulnerability was reported privately under `SECURITY.md` rather than disclosed here.
+## Public Release Review
+
+- [ ] No secrets, credentials, or customer data included.
+- [ ] No confidential infrastructure details included.
+- [ ] No unapproved proprietary or patent-sensitive implementation details included.
+- [ ] Public claims avoid absolute security guarantees.
 
 ## Validation
 
-Describe how the change was checked, for example:
+- [ ] Markdown lint
+- [ ] Link validation
+- [ ] MkDocs strict build
+- [ ] Mermaid validation
+- [ ] SDK lint/type/test (if impacted)
+- [ ] Demo validation (if impacted)
+- [ ] Secret-pattern scan
 
-- Markdown rendered successfully
-- Links reviewed
-- Mermaid syntax validated
-- Terminology checked against `docs/GLOSSARY.md`
-- Cross-references verified
+## Owner and Governance Review
+
+- [ ] Owner review completed for governance/ADR/RFC/release workflow changes.
+- [ ] Architecture Review Checklist updated or referenced for material changes.
 
 ## Related Issues
 
-Link any related issues or discussions.
-
-## Final Checklist
-
-- [ ] The change is focused and within repository scope.
-- [ ] Documentation is clear and technically precise.
-- [ ] New terms are defined or linked to the glossary.
-- [ ] Relevant roadmap or changelog entries were updated when needed.
-- [ ] I have reviewed `CONTRIBUTING.md`, `SECURITY.md`, and `CODE_OF_CONDUCT.md`.
+Link related issues/discussions.

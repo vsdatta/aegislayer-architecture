@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant P as Policy Engine
+    participant Q as Approval Queue
+    participant H as Human Approver
+    participant R as Runtime
+    P->>Q: Create bounded approval request
+    H->>Q: Review context and evidence
+    Q-->>R: Approved, denied, or expired
+    R-->>R: Validate status before execution

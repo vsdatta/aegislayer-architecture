@@ -29,6 +29,9 @@ jobs:
         with:
           globs: |
             **/*.md
+            !.venv/**
+            !site/**
+            !node_modules/**
             #node_modules
 
   link-check:

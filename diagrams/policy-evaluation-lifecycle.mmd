@@ -1,0 +1,9 @@
+flowchart TD
+    A[Structured Action Request] --> B[Collect Required Inputs]
+    B --> C{Inputs Complete?}
+    C -- No --> D[Deny with explicit reason]
+    C -- Yes --> E[Evaluate rules and risk]
+    E --> F{Decision}
+    F -- Allow --> G[Continue]
+    F -- Require Approval --> H[Approval Lifecycle]
+    F -- Deny --> D

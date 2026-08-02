@@ -1,101 +1,53 @@
 # AegisLayer Architecture Roadmap
 
-This roadmap describes the planned evolution of the public AegisLayer architecture repository. It is directional, may change, and does not represent a guarantee of delivery dates or production readiness.
+This roadmap describes the planned evolution of the public AegisLayer architecture repository. It is directional and may change.
 
-## v1.0 Release Milestone (Completed)
+## Repository Lifecycle
 
-The repository has reached a production-quality **v1.0 public documentation baseline** with:
+AegisLayer uses a governed lifecycle:
 
-- Completed architecture, governance, threat model, diagrams, ADR, and RFC documentation framework.
-- Reachable MkDocs navigation across all documentation pages.
-- Documentation quality automation for Markdown, links, and Mermaid source checks.
-- Public contribution and security reporting policies.
-- Repository branding placeholders for logo, favicon, banner, and social preview.
+1. RFC proposal for material architecture changes
+2. Structured review and decision
+3. ADR creation or update for accepted architecture decisions
+4. Documentation, diagram, and mapping synchronization
+5. Versioned release and publication review
 
-## Phase 1 — Public Foundation (Completed)
+## Milestone Status
 
-- Establish repository governance
-- Publish security and contribution policies
-- Define public scope and repository boundaries
-- Create the initial project overview
+## v1.0 Baseline (Completed)
 
-**Status:** Completed
+- Public architecture, governance, threat model, ADR, and RFC framework
+- Diagram catalog and control mapping
+- Documentation quality automation
 
-## Phase 2 — Core Architecture Documentation (Completed)
+## v1.1 Governance and Reference Expansion (In Progress)
 
-- Publish the project vision
-- Document the high-level architecture
-- Define trust boundaries and control layers
-- Describe governance and approval concepts
-- Publish an initial threat model
+- Architecture lifecycle deep-dive documentation
+- Public reference SDK for conceptual governance flows
+- Interactive static demo for governance simulations
+- Public research program structure
+- Hugging Face publication alignment from canonical GitHub source
 
-**Status:** Completed
+## v1.2 Conformance and Community Maturity (Planned)
 
-## Phase 3 — Reference Diagrams (Completed)
-
-- Architecture overview
-- Request-to-execution control flow
-- Trust-boundary diagram
-- Evidence and audit flow
-- Threat-to-control mapping
-
-**Status:** Completed
-
-## Phase 4 — Public Reference Materials (Completed)
-
-- Example policy structures
-- Example control mappings
-- Example threat scenarios
-- Example evidence records
-- Example review and approval workflows
-
-All examples will remain non-sensitive and will not expose proprietary or patent-sensitive implementation details.
-
-**Status:** Completed
-
-## Phase 5 — Demonstrations (Planned)
-
-Potential public demonstrations may include:
-
-- AI action risk classification
-- Policy decision visualization
-- Prompt-injection threat walkthroughs
-- Evidence-chain demonstrations
-- Governance workflow simulations
-
-## Phase 6 — Selected Open Components (Planned)
-
-Where appropriate and approved for public release, the project may publish selected reusable components, schemas, or developer utilities.
-
-Any open-source release will undergo security, legal, intellectual-property, and public-release review before publication.
-
-## Phase 7 — Community and Research (In progress)
-
-- Research notes
-- Educational articles
-- Community feedback
-- Public design discussions
-- Responsible collaboration with AI security and governance researchers
-
-## Post-v1.0 Priorities
-
-- Add scenario-driven walkthroughs tied to pattern and control mapping pages.
-- Expand threat-model abuse cases with test-oriented validation criteria.
-- Add periodic architecture consistency review cadence and publication checklist automation.
-- Introduce versioned release notes for future documentation milestones.
+- Expanded architecture conformance criteria
+- Additional scenario testing for docs and demo artifacts
+- Wider contributor onboarding and community issue curation
 
 ## Non-Goals
 
-This roadmap does not commit the project to:
+This roadmap does not commit to:
 
-- Publishing proprietary production code
-- Releasing confidential controls
-- Disclosing customer environments
-- Publishing unfiled patent-sensitive material
-- Claiming that any architecture can prevent every cyberattack
+- Publishing proprietary runtime internals
+- Revealing confidential infrastructure
+- Sharing customer data
+- Claiming universal attack prevention
 
-## Change Control
+## Release Governance Summary
 
-Material roadmap changes should be documented through repository history and reflected in `CHANGELOG.md` once formal versioning begins.
+- `main` remains stable public specification.
+- Material architecture changes require RFC-first workflow.
+- Accepted architecture changes require ADR alignment.
+- Releases require synchronized docs, diagrams, examples, mappings, and notes.
 
 Copyright © VND TECH LLC.

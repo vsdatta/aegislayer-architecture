@@ -1,0 +1,58 @@
+name: Publish Hugging Face Space
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      HF_SPACE_REPO: ${{ vars.HF_SPACE_REPO }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate required configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${HF_SPACE_REPO:-}" ]; then
+            echo "HF_SPACE_REPO repository variable is required."
+            exit 1
+          fi
+          if [ -z "${HF_TOKEN:-}" ]; then
+            echo "HF_TOKEN secret is required."
+            exit 1
+          fi
+
+      - name: Build and validate HF package
+        run: |
+          python scripts/build_hf_space.py
+          python scripts/validate_demo.py
+
+      - name: Publish to Hugging Face Space repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmpdir="$(mktemp -d)"
+          cp -R huggingface/hf_space/. "$tmpdir/"
+          if [ ! -f "$tmpdir/index.html" ]; then
+            echo "index.html missing in publication directory"
+            exit 1
+          fi
+          cd "$tmpdir"
+          git init
+          git checkout -b main
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Publish static Space artifacts from canonical GitHub repo"
+          git remote add origin "https://user:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE_REPO}"
+          git push origin main

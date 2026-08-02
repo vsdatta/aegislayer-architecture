@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant R as Requester
+    participant I as Identity Service
+    participant A as Authority Resolver
+    participant P as Policy Engine
+    R->>I: Present identity claims
+    I-->>R: Identity validated or denied
+    I->>A: Resolve authority scope
+    A-->>P: Authority context
+    P-->>R: Continue to policy or deny (fail-closed)

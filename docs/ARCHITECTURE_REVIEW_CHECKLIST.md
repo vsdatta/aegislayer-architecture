@@ -1,32 +1,44 @@
 # Architecture Review Checklist
 
-Use this checklist when reviewing significant documentation or architectural changes.
+Use this checklist for material architecture, governance, publication, SDK, or demo changes.
 
 ## Governance
 
-- [ ] Aligns with accepted ADRs.
-- [ ] Follows the RFC process when required.
-- [ ] Updates affected documentation.
+- [ ] RFC opened for material architecture changes
+- [ ] ADR updates applied for accepted architecture changes
+- [ ] ADR/RFC status updates synchronized
+- [ ] Release governance impacts assessed
 
-## Security
+## Security and Trust
 
-- [ ] Identity and authority considerations reviewed.
-- [ ] Least-privilege maintained.
-- [ ] Fail-closed behavior preserved.
-- [ ] Human approval requirements considered.
-- [ ] Evidence and audit implications documented.
-- [ ] Monitoring and revocation implications documented.
+- [ ] Identity and authority implications reviewed
+- [ ] Policy-before-execution implications reviewed
+- [ ] Least-privilege and capability-scope principles preserved
+- [ ] Fail-closed behavior preserved
+- [ ] Continuous verification and revocation impact reviewed
+- [ ] Incident containment implications reviewed
 
-## Documentation
+## Documentation Synchronization
 
-- [ ] Diagrams remain consistent.
-- [ ] Cross-references are updated.
-- [ ] Examples remain accurate.
-- [ ] Glossary updates considered.
+- [ ] Diagrams updated where affected
+- [ ] Threat model and control mapping aligned
+- [ ] Pattern library and reference examples aligned
+- [ ] Glossary updated for new terms
+- [ ] MkDocs navigation updated for new pages
 
-## Publication
+## Release and Publication
 
-- [ ] No credentials or sensitive operational details disclosed.
-- [ ] Public-release review completed.
-- [ ] Markdown renders correctly.
-- [ ] Links validated.
+- [ ] Changelog/release notes updated where needed
+- [ ] Public claims are bounded and accurate
+- [ ] No sensitive or proprietary disclosures
+- [ ] Hugging Face/GitHub Pages implications reviewed
+
+## Validation
+
+- [ ] Markdown lint
+- [ ] Link checks
+- [ ] MkDocs strict build
+- [ ] Mermaid validation
+- [ ] SDK lint/type/test (if impacted)
+- [ ] Demo validation (if impacted)
+- [ ] Secret-pattern scan

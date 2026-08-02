@@ -1,0 +1,6 @@
+{
+  "version": "1.1.0-rc.1",
+  "release_phase": "release-candidate",
+  "canonical_branch": "main",
+  "notes": "Public reference architecture, SDK, demo, research, and publication alignment expansion"
+}

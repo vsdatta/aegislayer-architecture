@@ -1,0 +1,7 @@
+flowchart TD
+    A[Canonical GitHub Repository] --> B[Build Demo Export]
+    B --> C[Validate Publication Directory]
+    C --> D{HF_TOKEN and HF_SPACE_REPO configured?}
+    D -- No --> E[Fail closed with clear error]
+    D -- Yes --> F[Push approved artifacts to HF Space repository]
+    F --> G[Hugging Face Static Space]

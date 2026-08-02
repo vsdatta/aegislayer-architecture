@@ -30,16 +30,41 @@ nav:
   - Vision: VISION.md
   - Architecture: ARCHITECTURE.md
   - Reference Architecture Guide: REFERENCE_ARCHITECTURE_GUIDE.md
-  - Diagram Catalog: DIAGRAMS.md
+  - Architecture Evolution Timeline: ARCHITECTURE_EVOLUTION_TIMELINE.md
+  - Security Assumptions: SECURITY_ASSUMPTIONS.md
+  - Trust Boundary Deep Dive: TRUST_BOUNDARY_DEEP_DIVE.md
+  - Lifecycles:
+      - Identity and Authority: IDENTITY_AUTHORITY_LIFECYCLE.md
+      - Policy Evaluation: POLICY_EVALUATION_LIFECYCLE.md
+      - Approval: APPROVAL_LIFECYCLE.md
+      - Connector: CONNECTOR_LIFECYCLE.md
+      - Capability: CAPABILITY_LIFECYCLE.md
+      - Evidence: EVIDENCE_LIFECYCLE_DEEP_DIVE.md
+      - Runtime State Model: RUNTIME_STATE_MODEL.md
+      - Continuous Verification: CONTINUOUS_VERIFICATION_LIFECYCLE.md
+      - Incident Containment and Recovery: INCIDENT_CONTAINMENT_RECOVERY.md
+  - Deployment Reference Architectures: DEPLOYMENT_REFERENCE_ARCHITECTURES.md
+  - Unsafe Patterns: UNSAFE_PATTERNS.md
   - Threat Model: THREAT_MODEL.md
+  - Threat-to-Control Traceability: THREAT_CONTROL_TRACEABILITY.md
   - Governance: GOVERNANCE.md
   - Security Design Principles: SECURITY_DESIGN_PRINCIPLES.md
   - Control Mapping: CONTROL_MAPPING.md
+  - Architecture Conformance Criteria: ARCHITECTURE_CONFORMANCE_CRITERIA.md
   - Pattern Library: PATTERN_LIBRARY.md
   - Reference Examples: REFERENCE_EXAMPLES.md
+  - Reference SDK: REFERENCE_SDK.md
+  - Interactive Demo: INTERACTIVE_DEMO.md
+  - Research Program: RESEARCH_PROGRAM.md
+  - Platform Alignment: PLATFORM_ALIGNMENT.md
+  - Reference Implementation Boundaries: REFERENCE_IMPLEMENTATION_BOUNDARIES.md
+  - Public vs Proprietary Boundaries: PUBLIC_PROPRIETARY_SCOPE_BOUNDARIES.md
+  - Diagram Catalog: DIAGRAMS.md
   - Architecture Review Checklist: ARCHITECTURE_REVIEW_CHECKLIST.md
   - Repository Maturity Model: REPOSITORY_MATURITY_MODEL.md
+  - Release Checklist: RELEASE_CHECKLIST.md
   - Release Notes v1.0: RELEASE_NOTES_v1.0.md
+  - Release Candidate Report v1.1.0-rc.1: RELEASE_CANDIDATE_REPORT_v1.1.0-rc1.md
   - Architecture Decisions:
       - ADR Index: adr/README.md
       - ADR Template: adr/0000-template.md

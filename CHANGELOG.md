@@ -1,75 +1,50 @@
 # Changelog
 
-All notable changes to this repository will be documented in this file.
+All notable changes to this repository are documented in this file.
 
-The format is inspired by Keep a Changelog and uses Semantic Versioning principles where appropriate for documentation releases.
+## [1.1.0-rc.1] - 2026-08-02
+
+### Added
+
+- Governance lifecycle enhancements:
+  - Release metadata: `release/VERSION.json`
+  - Release checklist: `docs/RELEASE_CHECKLIST.md`
+  - CODEOWNERS and expanded PR/issue governance templates
+- Expanded architecture lifecycle documentation:
+  - Identity, policy, approval, connector, capability, evidence, runtime, monitoring, and incident lifecycles
+  - Security assumptions, trust boundary deep dive, deployment reference architectures
+  - Threat-to-control traceability and conformance criteria
+  - Public/proprietary scope boundary pages
+- New Mermaid sources:
+  - identity-authority, policy-evaluation, approval, connector, runtime-state, incident containment, GitHub-to-HF publication flow
+- Public conceptual reference SDK under `reference-sdk/`
+- Static interactive demo under `interactive-demo/`
+- Structured research program under `research/`
+- Hugging Face alignment package under `huggingface/`
+- Website integration package under `website-integration/`
+- Community readiness assets:
+  - `.github/ISSUE_SEEDS/`
+  - `.github/labels.yml`
+  - `.github/milestones.md`
+- CI expansion with quality gates workflow for docs, links, MkDocs strict, Mermaid, SDK, demo, secret scanning, and artifacts
+
+### Changed
+
+- Updated root README and MkDocs navigation to include all new architecture and platform artifacts
+- Updated core docs (guide, getting started, governance, mapping, patterns, examples, glossary, maturity model)
+- Updated roadmap and contribution governance for RFC/ADR and release controls
+
+### Security and Publication Notes
+
+- Preserved fail-closed publication behavior for external sync workflows
+- No secrets or proprietary runtime internals added
 
 ## [1.0.0] - 2026-08-02
 
 ### Added
 
-- Root `assets/` placeholder branding set:
-  - `assets/logo.svg`
-  - `assets/favicon.svg`
-  - `assets/repository-banner.svg`
-  - `assets/social-preview.svg`
-
-### Changed
-
-- Promoted repository documentation to production-quality public v1.0 baseline.
-- Completed MkDocs navigation coverage so every page in `docs/` is reachable.
-- Integrated ADR and RFC indexes and templates into site navigation.
-- Improved documentation cross-linking across architecture, governance, threat model, diagrams, controls, patterns, and examples.
-- Improved README presentation with release-focused structure and badges.
-- Updated roadmap and repository maturity model for v1.0 readiness.
-- Normalized terminology and corrected editorial inconsistencies in reference pages.
-
-### Validated
-
-- Markdown relative links
-- MkDocs navigation reachability
-- Mermaid source-file declarations and non-empty diagram checks
-
-### Release Notes
-
-This release establishes the first public, internally consistent AegisLayer architecture documentation baseline.
-
-Scope includes:
-
-- Public architecture, threat model, governance, ADR, and RFC artifacts
-- Diagram catalog and Mermaid source library
-- Control mapping, pattern library, and reference examples
-- Documentation quality workflows and GitHub Pages deployment workflow
-
-## [0.1.0] - Initial Public Documentation Release
-
-### Added
-
-#### Repository Foundation
-
-- README
-- Apache 2.0 license
-- Security policy
-- Contribution guidelines
-- Code of Conduct
-- Public roadmap
-
-#### Core Documentation
-
-- Vision
-- High-level Architecture
-- Public Threat Model
-- Public Governance Model
-- Frequently Asked Questions
-- Glossary
-
-## Upcoming
-
-Planned additions include:
-
-- Scenario-driven walkthroughs
-- Expanded control-to-test traceability
-- Additional review automation for documentation quality gates
-- Incremental reference examples and demonstration material
+- Production-quality public v1.0 documentation baseline
+- Architecture, governance, threat model, diagrams, ADR/RFC framework
+- Documentation quality automation and GitHub Pages deployment workflow
 
 Copyright © VND TECH LLC.

@@ -1,70 +1,33 @@
 # Repository Maturity Model
 
-This document defines conceptual maturity levels for the public AegisLayer architecture repository.
+## Level 1: Foundation
 
-## Level 1 — Foundation
+- Core architecture, governance, and threat model published.
 
-- Repository initialized.
-- Core documentation established.
-- Community standards published.
+## Level 2: Governed Documentation
 
-## Level 2 — Architecture
+- ADR/RFC framework in place
+- Diagram and control mapping coverage
+- Contribution and security policies defined
 
-- Reference architecture documented.
-- Threat model completed.
-- Governance model documented.
-- Diagram library established.
+## Level 3: Release-Governed Architecture
 
-## Level 3 — Governance
+- Semantic version release metadata
+- Release checklist and candidate reporting
+- Public-release review controls
 
-- ADR framework operational.
-- RFC framework operational.
-- Control mapping maintained.
-- Pattern library published.
+## Level 4: Reference Artifact Expansion
 
-## Level 4 — Publication
+- Conceptual SDK with tests
+- Static interactive demo
+- Lifecycle deep-dive documentation
 
-- Documentation site published.
-- Navigation validated.
-- Versioned releases created.
-- Branding assets available.
+## Level 5: Community and Research Readiness
 
-## Level 5 — Community
+- Issue seeds and label strategy
+- Structured research program and publication policy
+- Platform alignment across GitHub Pages and Hugging Face
 
-- External contributions accepted.
-- RFC review process active.
-- Regular documentation reviews.
-- Public roadmap maintained.
+## Current Position
 
-## Level 6 — Reference Architecture
-
-- Documentation is internally consistent.
-- Cross-references are maintained.
-- Governance artifacts evolve through RFCs and ADRs.
-- Examples and diagrams remain synchronized with documentation.
-
-## Current Target
-
-Target release baseline: **v1.0 documentation release**.
-
-This baseline focuses on publication quality for public architecture documentation, governance artifacts, diagram consistency, and contribution readiness.
-
-## Assessment Checklist
-
-- [x] Core documentation complete
-- [x] Diagram library complete
-- [x] ADR library complete
-- [x] RFC framework complete
-- [x] Control mapping maintained
-- [x] Pattern library maintained
-- [x] Reference examples available
-- [x] Published documentation validated
-- [x] Community review process active
-
-## Release-Gate Checks
-
-- [x] Every documentation page is reachable through MkDocs navigation.
-- [x] Architectural terminology is consistent across docs and diagrams.
-- [x] ADR and RFC indexes are integrated into site navigation.
-- [x] Governance, control mapping, patterns, and examples cross-reference each other.
-- [x] Documentation quality workflows exist for Markdown, links, and Mermaid source checks.
+Repository is progressing through Level 4 and Level 5 controls for `v1.1.0-rc.1`.

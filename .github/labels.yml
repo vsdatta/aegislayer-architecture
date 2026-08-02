@@ -1,0 +1,34 @@
+labels:
+  - name: adr
+    color: "0052cc"
+    description: Architecture Decision Record related
+  - name: rfc
+    color: "5319e7"
+    description: Request for Comments related
+  - name: governance
+    color: "1d76db"
+    description: Governance or process related
+  - name: architecture
+    color: "0e8a16"
+    description: Architecture content
+  - name: documentation
+    color: "0366d6"
+    description: Documentation content
+  - name: security
+    color: "b60205"
+    description: Security content
+  - name: demo
+    color: "fbca04"
+    description: Interactive demo changes
+  - name: sdk
+    color: "c2e0c6"
+    description: Reference SDK changes
+  - name: research
+    color: "bfd4f2"
+    description: Research program work
+  - name: good first issue
+    color: "7057ff"
+    description: Suitable starter issue
+  - name: help wanted
+    color: "008672"
+    description: Community help requested

@@ -1,0 +1,9 @@
+flowchart TD
+    A[Anomaly Detected] --> B[Contain Runtime Path]
+    B --> C[Revoke Active Capabilities]
+    C --> D[Preserve Evidence]
+    D --> E[Escalate to Incident Roles]
+    E --> F{Recovery Decision}
+    F -- Resume with constraints --> G[Controlled Resume]
+    F -- Deny and close --> H[Closed with findings]
+    F -- Rollback --> I[Rollback and reassess]

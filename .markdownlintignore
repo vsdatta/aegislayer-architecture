@@ -1,0 +1,5 @@
+.venv/**
+site/**
+node_modules/**
+reference-sdk/.mypy_cache/**
+reference-sdk/.pytest_cache/**
