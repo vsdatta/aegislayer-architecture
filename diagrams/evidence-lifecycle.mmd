@@ -1,0 +1,56 @@
+flowchart TD
+    A[Request Received] --> B[Capture Request Identity and Provenance]
+    B --> C[Normalize Intent, Target, and Scope]
+    C --> D[Record Policy Inputs and Risk Context]
+    D --> E{Decision Outcome}
+
+    E -- Deny --> F[Record Denial Reason and Policy Basis]
+    E -- Approve --> G[Record Approval Identity, Scope, and Validity]
+    E -- Allow with Constraints --> H[Record Constraints and Capability Limits]
+
+    F --> N[Finalize Evidence Bundle]
+    G --> I[Issue Constrained Capability]
+    H --> I
+
+    I --> J[Record Execution Start]
+    J --> K[Capture Tool Calls, Events, and Results]
+    K --> L{Execution Outcome}
+
+    L -- Success --> M[Record Completion and Verification]
+    L -- Failure --> O[Record Error, Retry, Compensation, or Containment]
+    L -- Security Incident --> P[Record Alert, Revocation, and Response Actions]
+
+    M --> N
+    O --> N
+    P --> N
+
+    N --> Q[Apply Integrity Metadata and Hash Linkage]
+    Q --> R[Store in Protected Evidence Repository]
+    R --> S[Audit, Review, and Incident Reconstruction]
+    S --> T[Retention, Export, or Authorized Disposal]
+
+    U[Correlation and Causation IDs] -. applied throughout .-> B
+    U -. applied throughout .-> D
+    U -. applied throughout .-> J
+    U -. applied throughout .-> N
+
+    V[Time Source] -. trusted timestamps .-> B
+    V -. trusted timestamps .-> G
+    V -. trusted timestamps .-> J
+    V -. trusted timestamps .-> N
+
+    W[Access Control and Separation of Duties] -. protects .-> R
+    X[Integrity Verification] -. validates .-> Q
+    X -. validates .-> S
+
+    classDef capture fill:#eef4ff,stroke:#1f4b99,stroke-width:1px;
+    classDef decision fill:#fff7e6,stroke:#8a5a00,stroke-width:1px;
+    classDef execution fill:#f5f0ff,stroke:#6b3fa0,stroke-width:1px;
+    classDef finalize fill:#f0fff4,stroke:#2e7d32,stroke-width:1px;
+    classDef control fill:#f5f5f5,stroke:#555,stroke-width:1px;
+
+    class A,B,C,D,F,G,H capture;
+    class E,L decision;
+    class I,J,K,M,O,P execution;
+    class N,Q,R,S,T finalize;
+    class U,V,W,X control;
