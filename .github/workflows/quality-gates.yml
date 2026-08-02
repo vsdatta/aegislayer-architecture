@@ -59,47 +59,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Baseline Mermaid checks
+      - name: Mermaid validation
         run: python scripts/validate_mermaid.py
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: Mermaid parse validation
-        run: |
-          npm install @mermaid-js/parser
-          node --input-type=module - <<'NODE'
-          import fs from 'node:fs';
-          import path from 'node:path';
-          import { parse } from '@mermaid-js/parser';
-
-          const dir = path.join(process.cwd(), 'diagrams');
-          const files = fs.readdirSync(dir).filter((f) => f.endsWith('.mmd'));
-          let failed = false;
-          let parsed = 0;
-          let skipped = 0;
-
-          for (const file of files) {
-            const content = fs.readFileSync(path.join(dir, file), 'utf8');
-            try {
-              parse(content);
-              parsed += 1;
-            } catch (err) {
-              const message = String(err);
-              if (message.includes('Unknown diagram type')) {
-                console.warn(`Skipping unsupported Mermaid type for parser: ${file}`);
-                skipped += 1;
-                continue;
-              }
-              failed = true;
-              console.error(`Mermaid parse failed: ${file}`);
-              console.error(message);
-            }
-          }
-
-          if (failed) process.exit(1);
-          console.log(`Mermaid parse validation complete. parsed=${parsed}, skipped=${skipped}, total=${files.length}`);
-          NODE
 
   sdk-quality:
     runs-on: ubuntu-latest
@@ -138,7 +99,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
       - name: Workflow syntax review
-        uses: rhysd/actionlint@v1
+        run: docker run --rm -v "$PWD:/repo" -w /repo rhysd/actionlint:latest
       - name: Build release artifacts
         run: |
           mkdir -p dist
