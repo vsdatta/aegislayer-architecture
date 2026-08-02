@@ -1,0 +1,111 @@
+flowchart LR
+    subgraph U[Requester and AI Domain]
+        U1[Human User]
+        U2[AI Agent]
+        U3[Workflow Engine]
+    end
+
+    subgraph G[Governance and Authorization Domain]
+        G1[Identity and Authority Validation]
+        G2[Policy and Risk Evaluation]
+        G3[Approval Service]
+        G4[Capability Broker]
+    end
+
+    subgraph C[Connector Control Plane]
+        C1[Connector Registry]
+        C2[Capability Discovery]
+        C3[Compatibility Validation]
+        C4[Health and Readiness]
+        C5[Routing and Selection]
+        C6[Credential Broker]
+    end
+
+    subgraph R[Controlled Runtime Domain]
+        R1[Execution Runtime]
+        R2[Input and Parameter Validation]
+        R3[Timeouts, Quotas, and Cancellation]
+        R4[Output Validation and Redaction]
+    end
+
+    subgraph E[Evidence and Monitoring Domain]
+        E1[Audit and Evidence]
+        E2[Telemetry and Anomaly Detection]
+        E3[Revocation and Incident Response]
+    end
+
+    subgraph X[External Trust Domains]
+        X1[Cloud and Infrastructure APIs]
+        X2[Enterprise Applications]
+        X3[Databases and Data Services]
+        X4[Third-Party SaaS and Tools]
+    end
+
+    U1 --> U2
+    U2 --> U3
+    U3 --> G1
+    G1 --> G2
+    G2 --> G3
+    G2 --> G4
+    G3 --> G4
+
+    G4 --> C1
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+    C4 --> C5
+    C5 --> C6
+    C6 --> R1
+
+    R1 --> R2
+    R2 --> R3
+    R3 --> X1
+    R3 --> X2
+    R3 --> X3
+    R3 --> X4
+    X1 --> R4
+    X2 --> R4
+    X3 --> R4
+    X4 --> R4
+    R4 --> U3
+
+    G1 -. identity evidence .-> E1
+    G2 -. policy evidence .-> E1
+    G3 -. approval evidence .-> E1
+    C1 -. connector metadata .-> E1
+    C2 -. capability metadata .-> E1
+    C3 -. compatibility result .-> E1
+    C4 -. health snapshot .-> E2
+    C5 -. routing decision .-> E1
+    C6 -. credential events .-> E2
+    R1 -. execution events .-> E1
+    R3 -. resource telemetry .-> E2
+    R4 -. output telemetry .-> E2
+
+    E2 --> E3
+    E3 -. revoke capability .-> G4
+    E3 -. disable connector .-> C1
+    E3 -. cancel execution .-> R1
+
+    Y1[No Implicit Trust] -. applies to .-> G1
+    Y1 -. applies to .-> C1
+    Y1 -. applies to .-> R1
+    Y2[Least Privilege] -. constrains .-> G4
+    Y2 -. constrains .-> C6
+    Y3[Fail Closed] -. enforced by .-> C3
+    Y3 -. enforced by .-> C4
+    Y3 -. enforced by .-> R2
+
+    classDef requester fill:#f5f0ff,stroke:#6b3fa0,stroke-width:1px;
+    classDef governance fill:#eef4ff,stroke:#1f4b99,stroke-width:1px;
+    classDef connector fill:#fff7e6,stroke:#8a5a00,stroke-width:1px;
+    classDef runtime fill:#f0fff4,stroke:#2e7d32,stroke-width:1px;
+    classDef evidence fill:#f5f5f5,stroke:#555,stroke-width:1px;
+    classDef external fill:#fff2f2,stroke:#a33,stroke-width:1px;
+
+    class U1,U2,U3 requester;
+    class G1,G2,G3,G4 governance;
+    class C1,C2,C3,C4,C5,C6 connector;
+    class R1,R2,R3,R4 runtime;
+    class E1,E2,E3,Y1,Y2,Y3 evidence;
+    class X1,X2,X3,X4 external;
